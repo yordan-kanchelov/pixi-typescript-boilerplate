@@ -11,7 +11,7 @@ export class Main {
 
     private startLoadingAssets(): void {
         const loader = PIXI.loader;
-        loader.add("gameSprite", "assets/gameImages-0.json");
+        loader.add("gameSprite", "assets/sprites.json");
         loader.on("complete", () => {
             this.onAssetsLoaded();
         });
@@ -32,7 +32,7 @@ export class Main {
         });
 
         document.body.appendChild(this.game.view);
-
+        
         this.animate();
     }
 
