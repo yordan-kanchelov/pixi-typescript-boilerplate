@@ -11,7 +11,7 @@ export class Main {
 
     private startLoadingAssets(): void {
         const loader = PIXI.loader;
-        loader.add("gameSprite", "assets/spritesData.json");
+        loader.add("gameSprite", "assets/gameImages-0.json");
         loader.on("complete", () => {
             this.onAssetsLoaded();
         });
