@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "watchify -p [ tsify ] .\\src\\main.ts -o index.js",
+    "watch": "watchify -p [ tsify ] ./src/main.ts -o index.js",
     "build": "browserify ./src/main.ts -p [ tsify ] > index.js && uglifyjs --output ./index.js  --compress --mangle -- ./index.js"
   },
   "author": "",
