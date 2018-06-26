@@ -31,6 +31,8 @@ export class Main {
             width: window.innerWidth,
         });
 
+        document.body.appendChild(this.game.view);
+
         this.animate();
     }
 
