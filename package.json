@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "run-script-os",
-    "watch:win32:": "watchify -p [ tsify ] .\\src\\main.ts -o index.js",
+    "watch:win32": "watchify -p [ tsify ] .\\src\\main.ts -o index.js",
     "watch:darwin:linux:": "watchify -p [ tsify ] ./src/main.ts -o index.js",
     "build": "run-script-os",
-    "build:win32:": "browserify .\\src\\main.ts -p [ tsify ] > index.js && uglifyjs --output .\\index.js  --compress --mangle -- .\\index.js",
+    "build:win32": "browserify .\\src\\main.ts -p [ tsify ] > index.js && uglifyjs --output .\\index.js  --compress --mangle -- .\\index.js",
     "build:darwin:linux:": "browserify ./src/main.ts -p [ tsify ] > index.js && uglifyjs --output ./index.js  --compress --mangle -- ./index.js"
   },
   "author": "",
