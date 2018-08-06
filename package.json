@@ -1,29 +1,30 @@
 {
-  "name": "flappy-bird-pixi",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "run-script-os",
-    "watch:win32:": "watchify -p [ tsify ] .\\src\\main.ts -o index.js",
-    "watch:darwin:linux:": "watchify -p [ tsify ] ./src/main.ts -o index.js",
-    "build": "run-script-os",
-    "build:win32:": "browserify .\\src\\main.ts -p [ tsify ] > index.js && uglifyjs --output .\\index.js  --compress --mangle -- .\\index.js",
-    "build:darwin:linux:": "browserify ./src/main.ts -p [ tsify ] > index.js && uglifyjs --output ./index.js  --compress --mangle -- ./index.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "browserify": "^16.2.2",
-    "pixi.js": "^4.8.1",
-    "tsify": "^4.0.0",
-    "typescript": "^2.9.2",
-    "uglify-js": "^3.4.0"
-  },
-  "devDependencies": {
-    "@types/pixi.js": "^4.7.5",
-    "run-script-os": "^1.0.3",
-    "watchify": "^3.11.0"
-  }
+    "name": "flappy-bird-pixi",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "preinstall": "npm install -g typescript browserify uglify-js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch": "run-script-os",
+        "watch:win32:": "watchify -p [ tsify ] .\\src\\main.ts -o index.js",
+        "watch:darwin:linux:": "watchify -p [ tsify ] ./src/main.ts -o index.js",
+        "build": "run-script-os",
+        "build:win32:": "browserify .\\src\\main.ts -p [ tsify ] > index.js && uglifyjs --output .\\index.js  --compress --mangle -- .\\index.js",
+        "build:darwin:linux:": "browserify ./src/main.ts -p [ tsify ] > index.js && uglifyjs --output ./index.js  --compress --mangle -- ./index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "browserify": "^16.2.2",
+        "pixi.js": "^4.8.1",
+        "tsify": "^4.0.0",
+        "typescript": "^2.9.2",
+        "uglify-js": "^3.4.0"
+    },
+    "devDependencies": {
+        "@types/pixi.js": "^4.7.5",
+        "run-script-os": "^1.0.3",
+        "watchify": "^3.11.0"
+    }
 }
