@@ -28,11 +28,11 @@ export class Main {
         this.game = new PIXI.Application({
             backgroundColor: 0xffff00,
             height: window.innerHeight,
-            width: window.innerWidth,
+            width: window.innerWidth
         });
 
         document.body.appendChild(this.game.view);
-        
+
         this.animate();
     }
 
@@ -45,6 +45,6 @@ export class Main {
     }
 }
 
-(function () {
+(function() {
     const game: Main = new Main();
 })();
