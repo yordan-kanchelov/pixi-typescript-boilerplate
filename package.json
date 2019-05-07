@@ -12,10 +12,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "browserify": "^16.2.2",
-        "pixi.js": "^4.8.1",
-        "tsify": "^4.0.0",
-        "uglify-js": "^3.4.0"
+        "pixi.js": "^4.8.1"
     },
     "devDependencies": {
         "@types/pixi.js": "^4.7.5",
@@ -26,6 +23,9 @@
         "tsify": "^4.0.0",
         "typescript": "^3.1.6",
         "uglify-js": "^3.4.0",
-        "watchify": "^3.11.0"
+        "watchify": "^3.11.0",
+        "tsify": "^4.0.0",
+        "uglify-js": "^3.4.0",
+        "browserify": "^16.2.2"
     }
 }
