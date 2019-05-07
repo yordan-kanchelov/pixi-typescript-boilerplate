@@ -5,13 +5,9 @@
     "main": "index.js",
     "scripts": {
         "liveServer": "npx live-server",
-        "tscWatcher": "run-script-os",
-        "tscWatcher:win32": "watchify --debug -p [ tsify ] .\\src\\main.ts -o index.js",
-        "tscWatcher:darwin:linux:": "watchify --debug -p [ tsify ] ./src/main.ts -o index.js",
+        "tscWatcher": "watchify --debug -p [ tsify ] ./src/main.ts -o index.js",
         "watch": "npx npm-run-all -p tscWatcher liveServer",
-        "build": "run-script-os",
-        "build:win32": "npx browserify .\\src\\main.ts -p [ tsify ] > index.js && uglifyjs --output .\\index.js  --compress --mangle -- .\\index.js",
-        "build:darwin:linux:": "npx browserify ./src/main.ts -p [ tsify ] > index.js && uglifyjs --output ./index.js  --compress --mangle -- ./index.js"
+        "build": "npx browserify ./src/main.ts -p [ tsify ] > index.js && uglifyjs --output ./index.js  --compress --mangle -- ./index.js"
     },
     "author": "",
     "license": "ISC",
