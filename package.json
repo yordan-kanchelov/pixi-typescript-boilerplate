@@ -12,7 +12,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "pixi.js": "^4.8.1"
+        "pixi.js": "^5.0.3"
     },
     "devDependencies": {
         "@types/pixi.js": "^4.7.5",
