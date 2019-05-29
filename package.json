@@ -15,7 +15,6 @@
         "pixi.js": "^5.0.3"
     },
     "devDependencies": {
-        "@types/pixi.js": "^4.7.5",
         "browserify": "^16.2.3",
         "live-server": "^1.2.0",
         "npm-run-all": "^4.1.3",
