@@ -10,7 +10,7 @@ export class Main {
     }
 
     private startLoadingAssets(): void {
-        const loader = PIXI.loader;
+        const loader = PIXI.Loader.shared;
         loader.add("gameSprite", "assets/sprites.json");
         loader.on("complete", () => {
             this.onAssetsLoaded();
@@ -19,12 +19,10 @@ export class Main {
     }
 
     private onAssetsLoaded(): void {
-        this.createrenderer();
-
-        this.animate();
+        this.createRenderer();
     }
 
-    private createrenderer(): void {
+    private createRenderer(): void {
         this.game = new PIXI.Application({
             backgroundColor: 0xffff00,
             height: window.innerHeight,
@@ -32,16 +30,6 @@ export class Main {
         });
 
         document.body.appendChild(this.game.view);
-
-        this.animate();
-    }
-
-    private animate(): void {
-        requestAnimationFrame(() => {
-            this.animate();
-        });
-
-        this.game.renderer.render(this.game.stage);
     }
 }
 
