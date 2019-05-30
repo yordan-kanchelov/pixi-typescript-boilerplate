@@ -11,7 +11,7 @@ export class Main {
 
     private startLoadingAssets(): void {
         const loader = PIXI.Loader.shared;
-        loader.add("gameSprite", "assets/sprites.json");
+        loader.add("rabbit", "https://raw.githubusercontent.com/pixijs/bunny-mark/master/deploy/images/rabbitv3.png");
         loader.on("complete", () => {
             this.onAssetsLoaded();
         });
@@ -20,6 +20,8 @@ export class Main {
 
     private onAssetsLoaded(): void {
         this.createRenderer();
+
+        
     }
 
     private createRenderer(): void {
