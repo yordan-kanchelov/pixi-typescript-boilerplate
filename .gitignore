@@ -1,3 +1,5 @@
 index.js
 node_modules
 package-lock.json
+dist/*
+!dist/index.html
