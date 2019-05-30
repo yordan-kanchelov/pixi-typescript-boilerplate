@@ -33,6 +33,4 @@ export class Main {
     }
 }
 
-(function() {
-    const game: Main = new Main();
-})();
+const game: Main = new Main();
