@@ -20,15 +20,13 @@ export class Main {
 
     private onAssetsLoaded(): void {
         this.createRenderer();
-
-        
     }
 
     private createRenderer(): void {
         this.game = new PIXI.Application({
             backgroundColor: 0xffff00,
             height: window.innerHeight,
-            width: window.innerWidth
+            width: window.innerWidth,
         });
 
         document.body.appendChild(this.game.view);
