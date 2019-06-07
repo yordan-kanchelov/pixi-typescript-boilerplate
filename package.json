@@ -4,9 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "liveServer": "npx live-server ./dist",
-        "tscWatcher": "npx watchify --debug -p tsify -t [ babelify --extensions .ts] ./src/main.ts -o ./dist/index.js",
-        "watch": "npx npm-run-all -p tscWatcher liveServer",
+        "liveServer": "npx live-server ./dist --watch=index.js",
+        "watch": "npx npm-run-all -p watchify liveServer",
+        "watchify": "npx watchify ./src/main.ts  -p browserify-hmr -p tsify -t [ babelify --extensions .ts ] -o ./dist/index.js",
         "build": "npx browserify ./src/main.ts -p tsify -t [ babelify --extensions .ts] > ./dist/index.js && uglifyjs --output ./dist/index.js  --compress --mangle -- ./dist/index.js"
     },
     "author": "",
@@ -20,13 +20,14 @@
         "@babel/preset-env": "^7.4.5",
         "babelify": "^10.0.0",
         "browserify": "^16.2.2",
+        "browserify-hmr": "^0.3.7",
+        "core-js": "^3.1.3",
         "live-server": "^1.2.0",
         "npm-run-all": "^4.1.3",
         "run-script-os": "^1.0.3",
         "tsify": "^4.0.1",
         "typescript": "^3.1.6",
         "uglify-js": "^3.4.0",
-        "watchify": "^3.11.0",
-        "core-js": "^3.1.3"
+        "watchify": "^3.11.0"
     }
 }
