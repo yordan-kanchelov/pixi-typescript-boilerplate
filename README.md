@@ -2,7 +2,7 @@
 
 # pixi-typescript-boilerplate
 
-Beginner friendly emplate for pixi.js with typescript & babel + browserify   
+Beginner friendly template for pixi.js with typescript & babel + browserify   
 
 ## Highlights 
 - 🔰 Beginner friendly. 
