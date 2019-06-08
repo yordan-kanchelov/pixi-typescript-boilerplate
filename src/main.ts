@@ -13,7 +13,7 @@ export class Main {
 
     private startLoadingAssets(): void {
         const loader = PIXI.Loader.shared;
-        loader.add("rabbit", "https://raw.githubusercontent.com/pixijs/bunny-mark/master/deploy/images/rabbitv3.png");
+        loader.add("rabbit", "assets/images/rabbitv3.png");
         loader.on("complete", () => {
             this.onAssetsLoaded();
         });
