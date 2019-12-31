@@ -38,8 +38,6 @@ export class Main {
         this.pixiApp!.ticker.add(() => {
             bunny.rotation += 0.05;
         });
-
-        (window as any).pixi = PIXI;
     }
 
     private createRenderer(): void {
