@@ -2,13 +2,17 @@
 
 # pixi-typescript-boilerplate
 
-Beginner friendly emplate for pixi.js with typescript & babel + browserify
+Beginner friendly template for pixi.js with [Parcel](https://parceljs.org/)
 
 ## Highlights
 
 -   🔰 Beginner friendly.
+-   🚀 Blazing fast bundle times
 -   📝 Typescript.
 -   ✈️ Live reload.
+-   📝 Consistent code style with
+-   -   Prettier
+-   -   Eslint check
 
 ## Usage
 
@@ -21,6 +25,7 @@ Beginner friendly emplate for pixi.js with typescript & babel + browserify
 ## Commands:
 
 -   `npm run build` - starts build procedure
--   `npm run dev` - start watching for files and open server
+-   `npm run dev` - start watching for files and open's server on localhost:8080
+-   `npm run code-style-check` - run's eslint and prettier check on your code
 
 For vscode users - ctrl ( or ⌘ ) + shift + b will run the watch build as its set as default vscode task
