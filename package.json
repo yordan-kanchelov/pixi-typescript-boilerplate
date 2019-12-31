@@ -4,10 +4,10 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "liveServer": "npx live-server ./dist",
-        "typeCheck": "tsc --noEmit",
-        "dev": "parcel ./src/index.html --open",
-        "build": "npm run typeCheck & parcel build ./src/index.html",
+        "type-check": "tsc --noEmit",
+        "clean-build": "npx del-cli ./dist",
+        "dev": "parcel ./src/index.html --port=8080 --open",
+        "build": "npm run type-check & npm run clean-build & parcel build ./src/index.html",
         "pretty-check": "npx prettier -c ./src/**/*.ts",
         "lint-check": "npx eslint ./src/**/*.ts",
         "code-style-check": "npm run lint-check && npm run pretty-check",
@@ -26,7 +26,6 @@
         "del-cli": "^3.0.0",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.7.0",
-        "live-server": "^1.2.0",
         "parcel-bundler": "^1.12.4",
         "prettier": "^1.19.1",
         "typescript": "^3.7.4"

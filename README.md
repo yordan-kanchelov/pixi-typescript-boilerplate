@@ -2,12 +2,13 @@
 
 # pixi-typescript-boilerplate
 
-Beginner friendly emplate for pixi.js with typescript & babel + browserify   
+Beginner friendly emplate for pixi.js with typescript & babel + browserify
 
-## Highlights 
-- 🔰 Beginner friendly. 
-- 📝 Typescript.
-- ✈️ Live reload.
+## Highlights
+
+-   🔰 Beginner friendly.
+-   📝 Typescript.
+-   ✈️ Live reload.
 
 ## Usage
 
@@ -17,10 +18,9 @@ Beginner friendly emplate for pixi.js with typescript & babel + browserify
 
 `rm -r -force ./pixi-typescript-boilerplate/.git`
 
-
 ## Commands:
 
--   `npm run build ` - will build & then uglify the output 
--  ` npm run watch` - will start tsc watcher & live server for better developing experience 
+-   `npm run build` - starts build procedure
+-   `npm run dev` - start watching for files and open server
 
- For vscode users - ctrl ( or ⌘  ) + shift + b will run the watch build as its set as default vscode task
+For vscode users - ctrl ( or ⌘ ) + shift + b will run the watch build as its set as default vscode task
