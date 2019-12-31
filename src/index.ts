@@ -6,7 +6,7 @@ export class Main {
     private static readonly GAME_WIDTH = 800;
     private static readonly GAME_HEIGHT = 600;
 
-    private pixiApp: PIXI.Application | undefined;
+    private app: PIXI.Application | undefined;
 
     constructor() {
         window.onload = (): void => {
@@ -26,44 +26,53 @@ export class Main {
     private onAssetsLoaded(): void {
         this.createRenderer();
 
-        const stage = this.pixiApp!.stage;
+        const bunny = this.getBunny();
 
-        const bunny = new PIXI.Sprite(PIXI.Texture.from("rabbit"));
-        bunny.anchor.set(0.5, 0.5);
-        bunny.x = Main.GAME_WIDTH / 2;
-        bunny.y = Main.GAME_HEIGHT / 2;
-        bunny.scale.set(2, 2);
+        const stage = this.app!.stage;
         stage.addChild(bunny);
 
-        this.pixiApp!.ticker.add(() => {
+        this.app!.ticker.add(() => {
             bunny.rotation += 0.05;
         });
     }
 
     private createRenderer(): void {
-        this.pixiApp = new PIXI.Application({
+        this.app = new PIXI.Application({
             backgroundColor: 0xffff00,
             width: Main.GAME_WIDTH,
             height: Main.GAME_HEIGHT,
         });
 
-        document.body.appendChild(this.pixiApp.view);
+        document.body.appendChild(this.app.view);
 
-        this.pixiApp.renderer.resize(window.innerWidth, window.innerHeight);
-        this.pixiApp.stage.scale.x = window.innerWidth / Main.GAME_WIDTH;
-        this.pixiApp.stage.scale.y = window.innerHeight / Main.GAME_HEIGHT;
+        this.app.renderer.resize(window.innerWidth, window.innerHeight);
+        this.app.stage.scale.x = window.innerWidth / Main.GAME_WIDTH;
+        this.app.stage.scale.y = window.innerHeight / Main.GAME_HEIGHT;
 
-        window.addEventListener("resize", this.onResize);
+        window.addEventListener("resize", this.onResize.bind(this));
+    }
+
+    private getBunny(): PIXI.Sprite {
+        const bunnyRotationPoint = {
+            x: 0.5,
+            y: 0.5,
+        };
+
+        const bunny = new PIXI.Sprite(PIXI.Texture.from("rabbit"));
+        bunny.anchor.set(bunnyRotationPoint.x, bunnyRotationPoint.y);
+        bunny.scale.set(2, 2);
+
+        return bunny;
     }
 
     private onResize(): void {
-        if (!this.pixiApp) {
+        if (!this.app) {
             return;
         }
 
-        this.pixiApp.renderer.resize(window.innerWidth, window.innerHeight);
-        this.pixiApp.stage.scale.x = window.innerWidth / Main.GAME_WIDTH;
-        this.pixiApp.stage.scale.y = window.innerHeight / Main.GAME_HEIGHT;
+        this.app.renderer.resize(window.innerWidth, window.innerHeight);
+        this.app.stage.scale.x = window.innerWidth / Main.GAME_WIDTH;
+        this.app.stage.scale.y = window.innerHeight / Main.GAME_HEIGHT;
     }
 }
 
