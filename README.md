@@ -10,9 +10,7 @@ Beginner friendly template for pixi.js with [Parcel](https://parceljs.org/)
 -   🚀 Blazing fast bundle times
 -   📝 Typescript.
 -   ✈️ Live reload.
--   📝 Consistent code style with
--   -   Prettier
--   -   Eslint check
+-   📝 Consistent code style using Prettier and Eslint
 
 ## Usage
 
