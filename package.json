@@ -16,7 +16,6 @@
     "license": "MIT",
     "dependencies": {
         "@types/pixi.js": "^5.0.0",
-        "assets": "^3.0.1",
         "pixi.js": "^5.2.0"
     },
     "devDependencies": {
