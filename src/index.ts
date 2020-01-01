@@ -26,9 +26,12 @@ export class Main {
     private onAssetsLoaded(): void {
         this.createRenderer();
 
-        const bunny = this.getBunny();
-
         const stage = this.app!.stage;
+
+        console.log(stage);
+        const bunny = this.getBunny();
+        bunny.position.set(Main.GAME_WIDTH / 2, Main.GAME_HEIGHT / 2);
+
         stage.addChild(bunny);
 
         this.app!.ticker.add(() => {
