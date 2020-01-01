@@ -3,10 +3,8 @@
     "tasks": [
         {
             "type": "npm",
-            "script": "watch",
-            "problemMatcher": [
-                "$tsc"
-            ],
+            "script": "dev",
+            "problemMatcher": ["$tsc"],
             "group": {
                 "kind": "build",
                 "isDefault": true
