@@ -7,7 +7,7 @@
         "paths": {
             "~*": ["./*"]
         },
-        "types": ["./types/import-png"]
+        "types": ["./types/import-files"]
     },
     "include": ["./src/index.ts"]
 }
