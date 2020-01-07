@@ -1,4 +1,5 @@
 import * as PIXI from "pixi.js";
+import { PixiConsole, PixiConsoleConfig } from "pixi-console";
 
 import rabbitImage from "./assets/rabbit.png";
 
@@ -25,10 +26,16 @@ export class Main {
 
     private onAssetsLoaded(): void {
         this.createRenderer();
+        this.attachPixiConsole();
+
+        console.log("Pixi-console added 🦾");
+        console.warn("Warnings example ✌");
+        setTimeout(() => {
+            throw new Error("Uncaught error example 👮‍♀️");
+        }, 0);
 
         const stage = this.app!.stage;
 
-        console.log(stage);
         const bunny = this.getBunny();
         bunny.position.set(Main.GAME_WIDTH / 2, Main.GAME_HEIGHT / 2);
 
@@ -41,7 +48,7 @@ export class Main {
 
     private createRenderer(): void {
         this.app = new PIXI.Application({
-            backgroundColor: 0xffff00,
+            backgroundColor: 0xd3d3d3,
             width: Main.GAME_WIDTH,
             height: Main.GAME_HEIGHT,
         });
@@ -53,6 +60,18 @@ export class Main {
         this.app.stage.scale.y = window.innerHeight / Main.GAME_HEIGHT;
 
         window.addEventListener("resize", this.onResize.bind(this));
+    }
+
+    private attachPixiConsole() {
+        const consoleConfig = new PixiConsoleConfig();
+        consoleConfig.consoleWidth = this.app!.view.width;
+        consoleConfig.consoleHeight = this.app!.view.height;
+        consoleConfig.backgroundAlpha = 0;
+
+        const pixiConsole = new PixiConsole(consoleConfig);
+        pixiConsole.show();
+
+        this.app!.stage.addChild(pixiConsole);
     }
 
     private getBunny(): PIXI.Sprite {
