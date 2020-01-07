@@ -5,7 +5,7 @@
     "scripts": {
         "type-check": "tsc --noEmit",
         "clean-build": "npx del-cli ./dist",
-        "dev": "parcel ./src/index.html --port=8080 --open --no-minify",
+        "dev": "parcel ./src/index.html --port=8080 --open ",
         "build": "npm run type-check & npm run clean-build & parcel build ./src/index.html",
         "pretty-check": "npx prettier -c ./src/**/*.ts",
         "lint-check": "npx eslint ./src/**/*.ts",
