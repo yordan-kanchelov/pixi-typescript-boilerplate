@@ -5,7 +5,7 @@
     "scripts": {
         "type-check": "tsc --noEmit",
         "clean-build": "npx del-cli ./dist",
-        "dev": "parcel ./src/index.html --port=8080 --open",
+        "dev": "parcel ./src/index.html --port=8080 --open --no-minify",
         "build": "npm run type-check & npm run clean-build & parcel build ./src/index.html",
         "pretty-check": "npx prettier -c ./src/**/*.ts",
         "lint-check": "npx eslint ./src/**/*.ts",
@@ -16,9 +16,15 @@
     "license": "MIT",
     "dependencies": {
         "@types/pixi.js": "^5.0.0",
+        "pixi-console": "^3.0.1",
         "pixi.js": "^5.2.0"
     },
     "devDependencies": {
+        "@babel/core": "^7.7.7",
+        "@babel/plugin-proposal-class-properties": "^7.7.4",
+        "@babel/plugin-proposal-optional-chaining": "^7.7.5",
+        "@babel/preset-typescript": "^7.7.7",
+        "parcel-plugin-babel-typescript": "^1.0.1",
         "@typescript-eslint/eslint-plugin": "^2.10.0",
         "@typescript-eslint/parser": "^2.11.0",
         "del-cli": "^3.0.0",
