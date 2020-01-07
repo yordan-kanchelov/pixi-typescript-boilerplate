@@ -28,12 +28,6 @@ export class Main {
         this.createRenderer();
         this.attachPixiConsole();
 
-        console.log("Pixi-console added 🦾");
-        console.warn("Warnings example ✌");
-        setTimeout(() => {
-            throw new Error("Uncaught error example 👮‍♀️");
-        }, 0);
-
         const stage = this.app!.stage;
 
         const bunny = this.getBunny();
@@ -72,6 +66,12 @@ export class Main {
         pixiConsole.show();
 
         this.app!.stage.addChild(pixiConsole);
+
+        console.log("Pixi-console added 🦾");
+        console.warn("Warnings example ✌");
+        setTimeout(() => {
+            throw new Error("Uncaught error example 👮‍♀️");
+        }, 0);
     }
 
     private getBunny(): PIXI.Sprite {
