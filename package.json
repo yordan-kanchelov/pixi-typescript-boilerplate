@@ -1,8 +1,10 @@
 {
     "name": "pixi-typescript-boilerplate",
-    "version": "2.2.0",
+    "version": "2.3.0",
     "description": "pixi.js typescript boilerplate",
     "scripts": {
+        "test": "npx jest",
+        "code-coverage": "jest --coverage",
         "type-check": "tsc --noEmit",
         "clean-build": "npx del-cli ./dist",
         "dev": "parcel ./src/index.html --port=8080 --open ",
@@ -19,15 +21,39 @@
         "pixi.js": "^5.2.0"
     },
     "devDependencies": {
+        "@types/jest": "^25.1.0",
+        "@types/jsdom": "^12.2.4",
         "@types/pixi.js": "^5.0.0",
         "@typescript-eslint/eslint-plugin": "^2.10.0",
         "@typescript-eslint/parser": "^2.11.0",
         "del-cli": "^3.0.0",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.7.0",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^25.1.0",
+        "jest-canvas-mock": "^2.2.0",
+        "jsdom": "^16.0.1",
         "parcel-bundler": "^1.12.4",
         "parcel-plugin-static-files-copy": "^2.3.1",
         "prettier": "^1.19.1",
+        "ts-jest": "^25.0.0",
         "typescript": "^3.7.4"
+    },
+    "jest": {
+        "transform": {
+            ".(ts|tsx)": "ts-jest"
+        },
+        "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "moduleNameMapper": {
+            ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+        },
+        "setupFiles": [
+            "jest-canvas-mock"
+        ]
     }
 }
