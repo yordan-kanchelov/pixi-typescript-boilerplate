@@ -1,6 +1,6 @@
 {
     "name": "pixi-typescript-boilerplate",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "description": "pixi.js typescript boilerplate",
     "scripts": {
         "type-check": "tsc --noEmit",
