@@ -8,7 +8,8 @@ Beginner friendly template for pixi.js with [Parcel](https://parceljs.org/)
 
 -   🔰 Beginner friendly.
 -   🚀 Blazing fast bundle times
--   📝 Typescript.
+-   🛠 Typescript.
+-   📝 Out of the box jest setup, generating code coverage.
 -   ✈️ Live reload.
 -   📝 Consistent code style using Prettier and Eslint
 
@@ -24,6 +25,8 @@ Beginner friendly template for pixi.js with [Parcel](https://parceljs.org/)
 
 -   `npm run build` - starts build procedure
 -   `npm run dev` - start watching for files and open's server on localhost:8080
+-   `npm run test` - run tests
+-   `npm run code-coverage` - generate code coverage report
 -   `npm run code-style-check` - run's eslint and prettier check on your code
 
 For vscode users - ctrl ( or ⌘ ) + shift + b will run the watch build as its set as default vscode task
