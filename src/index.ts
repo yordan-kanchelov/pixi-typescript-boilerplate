@@ -18,9 +18,12 @@ export class Main {
     private startLoadingAssets(): void {
         const loader = PIXI.Loader.shared;
         loader.add("rabbit", rabbitImage);
+        loader.add("spriteExample", "./spritesData.json"); // example of loading spriteSheet
+
         loader.on("complete", () => {
             this.onAssetsLoaded();
         });
+        //
         loader.load();
     }
 
@@ -33,11 +36,43 @@ export class Main {
         const bunny = this.getBunny();
         bunny.position.set(Main.GAME_WIDTH / 2, Main.GAME_HEIGHT / 2);
 
+        const birdFromSprite = this.getBird();
+        birdFromSprite.anchor.set(0.5, 0.5);
+        birdFromSprite.position.set(Main.GAME_WIDTH / 2, Main.GAME_HEIGHT / 2 + bunny.height);
+
         stage.addChild(bunny);
+        stage.addChild(birdFromSprite);
 
         this.app!.ticker.add(() => {
             bunny.rotation += 0.05;
         });
+    }
+
+    private getBunny(): PIXI.Sprite {
+        const bunnyRotationPoint = {
+            x: 0.5,
+            y: 0.5,
+        };
+
+        const bunny = new PIXI.Sprite(PIXI.Texture.from("rabbit"));
+        bunny.anchor.set(bunnyRotationPoint.x, bunnyRotationPoint.y);
+        bunny.scale.set(2, 2);
+
+        return bunny;
+    }
+
+    private getBird(): PIXI.AnimatedSprite {
+        const bird = new PIXI.AnimatedSprite([
+            PIXI.Texture.from("birdUp.png"),
+            PIXI.Texture.from("birdMiddle.png"),
+            PIXI.Texture.from("birdDown.png"),
+        ]);
+        bird.loop = true;
+        bird.animationSpeed = 0.1;
+        bird.play();
+        bird.scale.set(3);
+
+        return bird;
     }
 
     private createRenderer(): void {
@@ -56,7 +91,7 @@ export class Main {
         window.addEventListener("resize", this.onResize.bind(this));
     }
 
-    private attachPixiConsole() {
+    private attachPixiConsole(): void {
         const consoleConfig = new PixiConsoleConfig();
         consoleConfig.consoleWidth = this.app!.view.width;
         consoleConfig.consoleHeight = this.app!.view.height;
@@ -72,19 +107,6 @@ export class Main {
         setTimeout(() => {
             throw new Error("Uncaught error example 👮‍♀️");
         }, 0);
-    }
-
-    private getBunny(): PIXI.Sprite {
-        const bunnyRotationPoint = {
-            x: 0.5,
-            y: 0.5,
-        };
-
-        const bunny = new PIXI.Sprite(PIXI.Texture.from("rabbit"));
-        bunny.anchor.set(bunnyRotationPoint.x, bunnyRotationPoint.y);
-        bunny.scale.set(2, 2);
-
-        return bunny;
     }
 
     private onResize(): void {
