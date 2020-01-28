@@ -15,18 +15,18 @@
     "author": "jkanchelov",
     "license": "MIT",
     "dependencies": {
-        "@types/pixi.js": "^5.0.0",
         "pixi-console": "^3.0.1",
         "pixi.js": "^5.2.0"
     },
     "devDependencies": {
-        "parcel-bundler": "^1.12.4",
-        "parcel-plugin-static-files-copy": "^2.3.1",
+        "@types/pixi.js": "^5.0.0",
         "@typescript-eslint/eslint-plugin": "^2.10.0",
         "@typescript-eslint/parser": "^2.11.0",
         "del-cli": "^3.0.0",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.7.0",
+        "parcel-bundler": "^1.12.4",
+        "parcel-plugin-static-files-copy": "^2.3.1",
         "prettier": "^1.19.1",
         "typescript": "^3.7.4"
     }
