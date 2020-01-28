@@ -15,6 +15,11 @@ export class Main {
         };
     }
 
+    // add for testing purpose
+    public helloWorld(): string {
+        return "hello world";
+    }
+
     private startLoadingAssets(): void {
         const loader = PIXI.Loader.shared;
         loader.add("rabbit", rabbitImage);
