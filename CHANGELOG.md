@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 28.1.2020
+
+### Added
+
+-   Add the parcel-static-plugin
+-   Add example of loading sprite sheet json file
+
+### Fixed
+
+-   Fix overwriting the default typings
+
 ## [2.1.0] - 7.1.2020
 
 -   Add babel support
