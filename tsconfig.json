@@ -3,11 +3,7 @@
         "target": "esnext",
         "module": "CommonJS" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
         "strict": true,
-        "baseUrl": "./src",
-        "paths": {
-            "~*": ["./*"]
-        },
-        "types": ["./types/import-files"]
+        "baseUrl": "./src"
     },
-    "include": ["./src/index.ts"]
+    "include": ["./src/index.ts", "./types/*.d.ts"]
 }
