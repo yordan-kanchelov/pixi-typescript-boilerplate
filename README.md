@@ -9,7 +9,7 @@ Beginner friendly template for pixi.js with [Parcel](https://parceljs.org/)
 -   🔰 Beginner friendly.
 -   🚀 Blazing fast bundle times
 -   🛠 Typescript.
--   📝 Out of the box jest setup, generating code coverage.
+-   📝 Test support with [Jest](https://jestjs.io/), generating code coverage.
 -   ✈️ Live reload.
 -   📝 Consistent code style using Prettier and Eslint
 
