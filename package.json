@@ -17,7 +17,6 @@
     "author": "jkanchelov",
     "license": "MIT",
     "dependencies": {
-        "pixi-console": "^3.0.1",
         "pixi.js": "^5.2.0"
     },
     "devDependencies": {
