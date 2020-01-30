@@ -24,7 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.1.0] - 7.1.2020
 
 -   Add babel support
--   Add pixi-console by default
 -   Update .gitignore ( .env )
 
 ## [2.0.0] - 1.1.2020

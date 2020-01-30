@@ -1,5 +1,4 @@
 import * as PIXI from "pixi.js";
-import { PixiConsole, PixiConsoleConfig } from "pixi-console";
 
 import rabbitImage from "./assets/rabbit.png";
 
@@ -15,7 +14,7 @@ export class Main {
         };
     }
 
-    // add for testing purpose
+    // add for the test example purpose
     public helloWorld(): string {
         return "hello world";
     }
@@ -34,7 +33,6 @@ export class Main {
 
     private onAssetsLoaded(): void {
         this.createRenderer();
-        this.attachPixiConsole();
 
         const stage = this.app!.stage;
 
@@ -51,6 +49,32 @@ export class Main {
         this.app!.ticker.add(() => {
             bunny.rotation += 0.05;
         });
+    }
+
+    private createRenderer(): void {
+        this.app = new PIXI.Application({
+            backgroundColor: 0xd3d3d3,
+            width: Main.GAME_WIDTH,
+            height: Main.GAME_HEIGHT,
+        });
+
+        document.body.appendChild(this.app.view);
+
+        this.app.renderer.resize(window.innerWidth, window.innerHeight);
+        this.app.stage.scale.x = window.innerWidth / Main.GAME_WIDTH;
+        this.app.stage.scale.y = window.innerHeight / Main.GAME_HEIGHT;
+
+        window.addEventListener("resize", this.onResize.bind(this));
+    }
+
+    private onResize(): void {
+        if (!this.app) {
+            return;
+        }
+
+        this.app.renderer.resize(window.innerWidth, window.innerHeight);
+        this.app.stage.scale.x = window.innerWidth / Main.GAME_WIDTH;
+        this.app.stage.scale.y = window.innerHeight / Main.GAME_HEIGHT;
     }
 
     private getBunny(): PIXI.Sprite {
@@ -78,50 +102,6 @@ export class Main {
         bird.scale.set(3);
 
         return bird;
-    }
-
-    private createRenderer(): void {
-        this.app = new PIXI.Application({
-            backgroundColor: 0xd3d3d3,
-            width: Main.GAME_WIDTH,
-            height: Main.GAME_HEIGHT,
-        });
-
-        document.body.appendChild(this.app.view);
-
-        this.app.renderer.resize(window.innerWidth, window.innerHeight);
-        this.app.stage.scale.x = window.innerWidth / Main.GAME_WIDTH;
-        this.app.stage.scale.y = window.innerHeight / Main.GAME_HEIGHT;
-
-        window.addEventListener("resize", this.onResize.bind(this));
-    }
-
-    private attachPixiConsole(): void {
-        const consoleConfig = new PixiConsoleConfig();
-        consoleConfig.consoleWidth = this.app!.view.width;
-        consoleConfig.consoleHeight = this.app!.view.height;
-        consoleConfig.backgroundAlpha = 0;
-
-        const pixiConsole = new PixiConsole(consoleConfig);
-        pixiConsole.show();
-
-        this.app!.stage.addChild(pixiConsole);
-
-        console.log("Pixi-console added 🦾");
-        console.warn("Warnings example ✌");
-        setTimeout(() => {
-            throw new Error("Uncaught error example 👮‍♀️");
-        }, 0);
-    }
-
-    private onResize(): void {
-        if (!this.app) {
-            return;
-        }
-
-        this.app.renderer.resize(window.innerWidth, window.innerHeight);
-        this.app.stage.scale.x = window.innerWidth / Main.GAME_WIDTH;
-        this.app.stage.scale.y = window.innerHeight / Main.GAME_HEIGHT;
     }
 }
 
