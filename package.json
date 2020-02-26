@@ -21,7 +21,7 @@
     },
     "devDependencies": {
         "@types/jest": "^25.1.2",
-        "@types/jsdom": "^12.2.4",
+        "@types/jsdom": "^16.1.0",
         "@types/pixi.js": "^5.0.0",
         "@typescript-eslint/eslint-plugin": "^2.21.0",
         "@typescript-eslint/parser": "^2.21.0",
