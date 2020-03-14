@@ -36,7 +36,7 @@
         "parcel-plugin-static-files-copy": "^2.3.1",
         "prettier": "^1.19.1",
         "ts-jest": "^25.2.0",
-        "typescript": "^3.8.2"
+        "typescript": "^3.8.3"
     },
     "jest": {
         "transform": {
