@@ -24,7 +24,7 @@
         "@types/jsdom": "^16.1.0",
         "@types/pixi.js": "^5.0.0",
         "@typescript-eslint/eslint-plugin": "^2.25.0",
-        "@typescript-eslint/parser": "^2.25.0",
+        "@typescript-eslint/parser": "^2.26.0",
         "del-cli": "^3.0.0",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.7.0",
