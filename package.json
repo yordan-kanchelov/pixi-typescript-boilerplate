@@ -20,7 +20,7 @@
         "pixi.js": "^5.2.1"
     },
     "devDependencies": {
-        "@types/jest": "^25.1.4",
+        "@types/jest": "^25.1.5",
         "@types/jsdom": "^16.1.0",
         "@types/pixi.js": "^5.0.0",
         "@typescript-eslint/eslint-plugin": "^2.25.0",
