@@ -19,9 +19,9 @@ jobs:
             - name: npm install
               run: |
                   npm ci
-            - name: prettier format check
+            - name: code style check
               run: |
-                  npm run prettier-check
+                  npm run code-style-check
             - name: lint format check
               run: |
                   npm run lint-check
