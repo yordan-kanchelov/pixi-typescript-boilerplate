@@ -6,7 +6,7 @@ export class Main {
     private static readonly GAME_WIDTH = 800;
     private static readonly GAME_HEIGHT = 600;
 
-    private app: PIXI.Application | undefined;
+    private app!: PIXI.Application;
 
     constructor() {
         window.onload = (): void => {
@@ -34,7 +34,7 @@ export class Main {
     private onAssetsLoaded(): void {
         this.createRenderer();
 
-        const stage = this.app!.stage;
+        const stage = this.app.stage;
 
         const bunny = this.getBunny();
         bunny.position.set(Main.GAME_WIDTH / 2, Main.GAME_HEIGHT / 2);
@@ -46,7 +46,7 @@ export class Main {
         stage.addChild(bunny);
         stage.addChild(birdFromSprite);
 
-        this.app!.ticker.add(() => {
+        this.app.ticker.add(() => {
             bunny.rotation += 0.05;
         });
     }
