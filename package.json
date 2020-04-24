@@ -9,10 +9,10 @@
         "clean-build": "npx del-cli ./dist",
         "dev": "parcel ./src/index.html --port=8080 --open ",
         "build": "npm run type-check & npm run clean-build & parcel build ./src/index.html",
+        "pretty-format": "npx prettier --write src/**/*.ts",
         "pretty-check": "npx prettier -c ./src/**/*.ts",
         "lint-check": "npx eslint ./src/**/*.ts",
-        "code-style-check": "npm run lint-check && npm run pretty-check",
-        "format": "npx prettier --write src/**"
+        "code-style-check": "npm run lint-check && npm run pretty-check"
     },
     "author": "jkanchelov",
     "license": "MIT",
