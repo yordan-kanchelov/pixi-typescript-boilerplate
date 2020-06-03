@@ -53,5 +53,14 @@
         "setupFiles": [
             "jest-canvas-mock"
         ]
+    },
+    "staticFiles": {
+        "staticPath": [
+            {
+                "staticPath": "./src/assets/spriteSheets",
+                "staticOutDir": "assets/spriteSheets"
+            }
+        ],
+        "watcherGlob": "**"
     }
 }

@@ -22,7 +22,7 @@ export class Main {
     private startLoadingAssets(): void {
         const loader = PIXI.Loader.shared;
         loader.add("rabbit", rabbitImage);
-        loader.add("spriteExample", "./spritesData.json"); // example of loading spriteSheet
+        loader.add("spriteExample", "./assets/spriteSheets/spritesData.json"); // example of loading spriteSheet
 
         loader.on("complete", () => {
             this.onAssetsLoaded();
