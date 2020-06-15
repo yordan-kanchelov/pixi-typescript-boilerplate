@@ -32,7 +32,7 @@
         "jest-canvas-mock": "^2.2.0",
         "jsdom": "^16.2.2",
         "parcel-bundler": "^1.12.4",
-        "parcel-plugin-static-files-copy": "^2.4.1",
+        "parcel-plugin-static-files-copy": "^2.4.3",
         "prettier": "^2.0.5",
         "ts-jest": "^25.5.1",
         "typescript": "^3.9.5"
