@@ -24,7 +24,7 @@ export class Main {
         loader.add("rabbit", rabbitImage);
         loader.add("spriteExample", "./assets/spriteSheets/spritesData.json"); // example of loading spriteSheet
 
-        loader.on("complete", () => {
+        loader.onComplete.once(() => {
             this.onAssetsLoaded();
         });
         //
