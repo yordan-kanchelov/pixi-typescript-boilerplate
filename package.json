@@ -57,8 +57,8 @@
     "staticFiles": {
         "staticPath": [
             {
-                "staticPath": "./src/assets/spriteSheets",
-                "staticOutDir": "./assets/spriteSheets"
+                "staticPath": "./assets/",
+                "staticOutDir": "./assets/"
             }
         ],
         "watcherGlob": "**"

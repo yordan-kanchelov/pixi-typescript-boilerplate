@@ -1,7 +1,5 @@
 import * as PIXI from "pixi.js";
 
-import rabbitImage from "./assets/rabbit.png";
-
 export class Main {
     private static readonly GAME_WIDTH = 800;
     private static readonly GAME_HEIGHT = 600;
@@ -21,8 +19,7 @@ export class Main {
 
     private startLoadingAssets(): void {
         const loader = PIXI.Loader.shared;
-        loader.add("rabbit", rabbitImage);
-        loader.add("spriteExample", "./assets/spriteSheets/spritesData.json"); // example of loading spriteSheet
+        loader.add("rabbit", "./assets/rabbit.png");
 
         loader.onComplete.once(() => {
             this.onAssetsLoaded();
@@ -39,12 +36,7 @@ export class Main {
         const bunny = this.getBunny();
         bunny.position.set(Main.GAME_WIDTH / 2, Main.GAME_HEIGHT / 2);
 
-        const birdFromSprite = this.getBird();
-        birdFromSprite.anchor.set(0.5, 0.5);
-        birdFromSprite.position.set(Main.GAME_WIDTH / 2, Main.GAME_HEIGHT / 2 + bunny.height);
-
         stage.addChild(bunny);
-        stage.addChild(birdFromSprite);
 
         this.app.ticker.add(() => {
             bunny.rotation += 0.05;
@@ -88,20 +80,6 @@ export class Main {
         bunny.scale.set(2, 2);
 
         return bunny;
-    }
-
-    private getBird(): PIXI.AnimatedSprite {
-        const bird = new PIXI.AnimatedSprite([
-            PIXI.Texture.from("birdUp.png"),
-            PIXI.Texture.from("birdMiddle.png"),
-            PIXI.Texture.from("birdDown.png"),
-        ]);
-        bird.loop = true;
-        bird.animationSpeed = 0.1;
-        bird.play();
-        bird.scale.set(3);
-
-        return bird;
     }
 }
 
