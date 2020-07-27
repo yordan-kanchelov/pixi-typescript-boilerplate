@@ -1,5 +1,7 @@
 import * as PIXI from "pixi.js";
 
+import "./style.css";
+
 export class Main {
     private static readonly GAME_WIDTH = 800;
     private static readonly GAME_HEIGHT = 600;
@@ -19,12 +21,12 @@ export class Main {
 
     private startLoadingAssets(): void {
         const loader = PIXI.Loader.shared;
-        loader.add("rabbit", "./assets/rabbit.png");
+        loader.add("rabbit", "./assets/simpleSpriteSheet.json");
 
         loader.onComplete.once(() => {
             this.onAssetsLoaded();
         });
-        //
+
         loader.load();
     }
 
@@ -33,14 +35,11 @@ export class Main {
 
         const stage = this.app.stage;
 
-        const bunny = this.getBunny();
-        bunny.position.set(Main.GAME_WIDTH / 2, Main.GAME_HEIGHT / 2);
+        const birdFromSprite = this.getBird();
+        birdFromSprite.anchor.set(0.5, 0.5);
+        birdFromSprite.position.set(Main.GAME_WIDTH / 2, Main.GAME_HEIGHT / 2);
 
-        stage.addChild(bunny);
-
-        this.app.ticker.add(() => {
-            bunny.rotation += 0.05;
-        });
+        stage.addChild(birdFromSprite);
     }
 
     private createRenderer(): void {
@@ -69,17 +68,18 @@ export class Main {
         this.app.stage.scale.y = window.innerHeight / Main.GAME_HEIGHT;
     }
 
-    private getBunny(): PIXI.Sprite {
-        const bunnyRotationPoint = {
-            x: 0.5,
-            y: 0.5,
-        };
+    private getBird(): PIXI.AnimatedSprite {
+        const bird = new PIXI.AnimatedSprite([
+            PIXI.Texture.from("birdUp.png"),
+            PIXI.Texture.from("birdMiddle.png"),
+            PIXI.Texture.from("birdDown.png"),
+        ]);
+        bird.loop = true;
+        bird.animationSpeed = 0.1;
+        bird.play();
+        bird.scale.set(3);
 
-        const bunny = new PIXI.Sprite(PIXI.Texture.from("rabbit"));
-        bunny.anchor.set(bunnyRotationPoint.x, bunnyRotationPoint.y);
-        bunny.scale.set(2, 2);
-
-        return bunny;
+        return bird;
     }
 }
 

@@ -1,0 +1,99 @@
+{
+    "frames": {
+        "background.png": {
+            "frame": { "x": 155, "y": 0, "w": 144, "h": 256 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 144, "h": 256 },
+            "sourceSize": { "w": 144, "h": 256 }
+        },
+        "birdDown.png": {
+            "frame": { "x": 23, "y": 268, "w": 17, "h": 12 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 17, "h": 12 },
+            "sourceSize": { "w": 17, "h": 12 }
+        },
+        "birdMiddle.png": {
+            "frame": { "x": 23, "y": 255, "w": 17, "h": 12 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 17, "h": 12 },
+            "sourceSize": { "w": 17, "h": 12 }
+        },
+        "birdText.png": {
+            "frame": { "x": 0, "y": 202, "w": 38, "h": 19 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 38, "h": 19 },
+            "sourceSize": { "w": 38, "h": 19 }
+        },
+        "birdUp.png": {
+            "frame": { "x": 23, "y": 242, "w": 17, "h": 12 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 17, "h": 12 },
+            "sourceSize": { "w": 17, "h": 12 }
+        },
+        "bronzeMedal.png": {
+            "frame": { "x": 0, "y": 265, "w": 22, "h": 22 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 22, "h": 22 },
+            "sourceSize": { "w": 22, "h": 22 }
+        },
+        "cigarette.png": {
+            "frame": { "x": 0, "y": 288, "w": 8, "h": 5 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 8, "h": 5 },
+            "sourceSize": { "w": 8, "h": 5 }
+        },
+        "flappyText.png": {
+            "frame": { "x": 0, "y": 116, "w": 56, "h": 22 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 56, "h": 22 },
+            "sourceSize": { "w": 56, "h": 22 }
+        },
+        "gameOver.png": {
+            "frame": { "x": 0, "y": 57, "w": 113, "h": 58 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 113, "h": 58 },
+            "sourceSize": { "w": 113, "h": 58 }
+        },
+        "gameText.png": {
+            "frame": { "x": 0, "y": 162, "w": 48, "h": 19 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 48, "h": 19 },
+            "sourceSize": { "w": 48, "h": 19 }
+        },
+        "getText.png": {
+            "frame": { "x": 0, "y": 222, "w": 33, "h": 19 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 33, "h": 19 },
+            "sourceSize": { "w": 33, "h": 19 }
+        },
+        "goldMedal.png": {
+            "frame": { "x": 0, "y": 242, "w": 22, "h": 22 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 22, "h": 22 },
+            "sourceSize": { "w": 22, "h": 22 }
+        },
+        "ground.png": {
+            "frame": { "x": 0, "y": 0, "w": 154, "h": 56 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 154, "h": 56 },
+            "sourceSize": { "w": 154, "h": 56 }
+        },
+        "overText.png": {
+            "frame": { "x": 0, "y": 182, "w": 43, "h": 19 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 19 },
+            "sourceSize": { "w": 43, "h": 19 }
+        },
+        "pipeDown.png": {
+            "frame": { "x": 76, "y": 116, "w": 26, "h": 121 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 26, "h": 121 },
+            "sourceSize": { "w": 26, "h": 121 }
+        },
+        "pipeUp.png": {
+            "frame": { "x": 49, "y": 162, "w": 26, "h": 135 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 26, "h": 135 },
+            "sourceSize": { "w": 26, "h": 135 }
+        },
+        "readyText.png": {
+            "frame": { "x": 0, "y": 139, "w": 51, "h": 22 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 51, "h": 22 },
+            "sourceSize": { "w": 51, "h": 22 }
+        },
+        "silverMedal.png": {
+            "frame": { "x": 52, "y": 139, "w": 22, "h": 22 },
+            "spriteSourceSize": { "x": 0, "y": 0, "w": 22, "h": 22 },
+            "sourceSize": { "w": 22, "h": 22 }
+        }
+    },
+    "meta": {
+        "image": "simpleSpriteSheet.png",
+        "size": { "w": 300, "h": 298 },
+        "scale": "1"
+    }
+}

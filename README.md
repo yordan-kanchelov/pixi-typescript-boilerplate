@@ -2,16 +2,22 @@
 
 # pixi-typescript-boilerplate
 
-Beginner friendly template for pixi.js with [Parcel](https://parceljs.org/)
+## Beginner friendly template for pixi.js with [Webpack](https://webpack.js.org/)
+
+---
+
+### The previous parcel build which I won't support any further is [here](https://github.com/jkanchelov/pixi-typescript-boilerplate/tree/parcel-template)
+
+---
 
 ## Highlights
 
--   🔰  - Beginner friendly.
--   🚀  - Blazing fast bundle times
--   🛠  - Typescript.
--   📝  - Unit test support with [Jest](https://jestjs.io/), generating code coverage.
--   ✈️  - Live reload.
--   📝  - Consistent code style using Prettier and Eslint
+-   🔰 - Beginner friendly.
+-   🛠 - Typescript + Babel.
+-   ✈️ - Live reload.
+-   🚀 - Blazing fast bundle times
+-   📝 - Consistent code style using Prettier and Eslint
+-   📝 - Unit test support with [Jest](https://jestjs.io/), generating code coverage.
 
 ## Usage
 
