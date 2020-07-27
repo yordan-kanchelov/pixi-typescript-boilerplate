@@ -17,7 +17,7 @@
     "author": "jkanchelov",
     "license": "MIT",
     "dependencies": {
-        "pixi.js": "^5.3.0"
+        "pixi.js": "^5.3.1"
     },
     "devDependencies": {
         "@types/jest": "^26.0.4",
