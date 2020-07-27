@@ -6,7 +6,7 @@
 
 ---
 
-### The previous parcel build which I won't support any further is [here](https://github.com/jkanchelov/pixi-typescript-boilerplate/tree/parcel-template)
+#### The previous version done with [Parcel](https://parceljs.org/), which I won't support any further is [here](https://github.com/jkanchelov/pixi-typescript-boilerplate/tree/parcel-template)
 
 ---
 
