@@ -1,15 +1,28 @@
-const path = require("path");
-const webpack = require("webpack");
+import * as path from "path";
+import * as webpack from "webpack";
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 
-module.exports = (env) => {
+module.exports = (env: { mode: "development" | "production" }) => {
     return {
         mode: env.mode,
 
         module: {
             rules: [
+                {
+                    enforce: "pre",
+                    test: /\.(js|jsx|ts|tsx)$/,
+                    exclude: /node_modules/,
+                    loader: "eslint-loader",
+                    options: {
+                        emitError: true,
+                        emitWarning: true,
+                        failOnError: true,
+                        failOnWarning: true,
+                    },
+                },
                 {
                     test: /\.(js|jsx|ts|tsx)$/,
                     use: [
@@ -49,10 +62,24 @@ module.exports = (env) => {
 
             new webpack.DefinePlugin({
                 PRODUCTION: JSON.stringify(true),
-                VERSION: JSON.stringify("prod-version"), // TODO Update from package.json
+                VERSION: JSON.stringify("3.0.0"), // TODO Update from package.json
             }),
 
             new webpack.ProgressPlugin(),
         ],
+
+        optimization: {
+            minimize: true,
+            minimizer: [
+                new TerserPlugin({
+                    terserOptions: {
+                        mangle: true,
+                        toplevel: true,
+                        keep_classnames: false,
+                        keep_fnames: true,
+                    },
+                }),
+            ],
+        },
     };
 };
