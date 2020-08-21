@@ -63,7 +63,7 @@
         "mini-css-extract-plugin": "^0.10.0",
         "optimize-css-assets-webpack-plugin": "^5.0.3",
         "prettier": "^2.0.5",
-        "pretty-quick": "^2.0.1",
+        "pretty-quick": "^3.0.0",
         "terser-webpack-plugin": "^4.1.0",
         "ts-jest": "^26.2.0",
         "ts-loader": "^8.0.2",
