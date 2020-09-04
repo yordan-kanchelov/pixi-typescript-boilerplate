@@ -1,9 +1,6 @@
 import * as webpack from "webpack";
 import * as path from "path";
 
-import ForkTsCheckerNotifierWebpackPlugin from "fork-ts-checker-notifier-webpack-plugin";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 module.exports = (env: { mode: "development" | "production" }) => {
@@ -20,17 +17,11 @@ module.exports = (env: { mode: "development" | "production" }) => {
                     test: /\.(js|jsx|ts|tsx)$/,
                     exclude: /node_modules/,
                     loader: "eslint-loader",
-                    options: {
-                        fix: true,
-                    },
                 },
                 {
                     test: /\.tsx?$/,
                     loader: "ts-loader",
                     exclude: /node_modules/,
-                    options: {
-                        transpileOnly: true,
-                    },
                 },
             ],
         },
@@ -42,16 +33,6 @@ module.exports = (env: { mode: "development" | "production" }) => {
         },
 
         plugins: [
-            new ForkTsCheckerWebpackPlugin({
-                eslint: {
-                    files: "./src/**/*.{ts,tsx,js,jsx}",
-                },
-            }),
-
-            new ForkTsCheckerNotifierWebpackPlugin({
-                skipSuccessful: true,
-            }),
-
             new MiniCssExtractPlugin({
                 filename: "[name].css",
             }),
