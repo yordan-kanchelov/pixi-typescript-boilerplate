@@ -46,7 +46,7 @@
         "babel-loader": "^8.1.0",
         "babel-register": "^6.26.0",
         "copy-webpack-plugin": "^6.1.0",
-        "css-loader": "^4.2.2",
+        "css-loader": "^4.3.0",
         "del-cli": "^3.0.1",
         "eslint": "^7.8.1",
         "eslint-config-prettier": "^6.11.0",
