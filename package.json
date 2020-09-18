@@ -45,7 +45,7 @@
         "@typescript-eslint/parser": "^4.0.1",
         "babel-loader": "^8.1.0",
         "babel-register": "^6.26.0",
-        "copy-webpack-plugin": "^6.1.0",
+        "copy-webpack-plugin": "^6.1.1",
         "css-loader": "^4.2.2",
         "del-cli": "^3.0.1",
         "eslint": "^7.8.1",
