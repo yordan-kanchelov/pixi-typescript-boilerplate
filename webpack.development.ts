@@ -10,6 +10,12 @@ module.exports = (env: { mode: "development" | "production" }) => {
 
         devtool: "cheap-module-eval-source-map",
 
+        devServer: {
+            host: "0.0.0.0",
+            openPage: "http://localhost:8080/",
+            clientLogLevel: "silent",
+        },
+
         module: {
             rules: [
                 {
