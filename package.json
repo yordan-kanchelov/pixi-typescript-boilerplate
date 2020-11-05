@@ -64,7 +64,7 @@
         "pretty-quick": "^3.0.2",
         "terser-webpack-plugin": "^4.2.3",
         "ts-jest": "^26.4.1",
-        "ts-loader": "^8.0.4",
+        "ts-loader": "^8.0.9",
         "ts-node": "^9.0.0",
         "typescript": "^4.0.3",
         "webpack": "^4.44.2",
