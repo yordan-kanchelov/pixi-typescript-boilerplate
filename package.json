@@ -60,7 +60,7 @@
         "jsdom": "^16.4.0",
         "mini-css-extract-plugin": "^1.0.0",
         "optimize-css-assets-webpack-plugin": "^5.0.4",
-        "prettier": "^2.1.2",
+        "prettier": "^2.2.0",
         "pretty-quick": "^3.0.2",
         "terser-webpack-plugin": "^4.2.3",
         "ts-jest": "^26.4.1",
