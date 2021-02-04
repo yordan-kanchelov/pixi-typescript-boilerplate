@@ -27,9 +27,6 @@ module.exports = (env: { mode: "development" | "production" }) => {
                     use: [
                         {
                             loader: MiniCssExtractPlugin.loader,
-                            options: {
-                                hmr: developmentMode,
-                            },
                         },
                         "css-loader",
                     ],
@@ -64,6 +61,8 @@ module.exports = (env: { mode: "development" | "production" }) => {
     const envConfig = require(path.resolve(__dirname, `./webpack.${env.mode}.ts`))(env);
 
     const mergedConfig = merge(config, envConfig);
+
+    console.log(mergedConfig);
 
     return mergedConfig;
 };

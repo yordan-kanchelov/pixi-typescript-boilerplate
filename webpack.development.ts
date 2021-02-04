@@ -1,19 +1,21 @@
 import * as webpack from "webpack";
 import * as path from "path";
 
+import fs from "fs";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const pkg: any = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json"), "utf-8"));
+
 module.exports = (env: { mode: "development" | "production" }) => {
-    /** @type {import('webpack').Configuration} */
     const devConfig = {
         mode: env.mode,
 
-        devtool: "cheap-module-eval-source-map",
+        devtool: "inline-source-map",
 
         devServer: {
             host: "0.0.0.0",
             openPage: "http://localhost:8080/",
-            clientLogLevel: "silent",
         },
 
         module: {
@@ -34,8 +36,8 @@ module.exports = (env: { mode: "development" | "production" }) => {
 
         output: {
             path: path.resolve(__dirname, "dist"),
-            filename: "game.js",
-            chunkFilename: "game-library.js",
+            filename: "[name].js",
+            chunkFilename: "[id].js",
         },
 
         plugins: [
@@ -44,8 +46,7 @@ module.exports = (env: { mode: "development" | "production" }) => {
             }),
 
             new webpack.DefinePlugin({
-                PRODUCTION: JSON.stringify(false),
-                VERSION: JSON.stringify("3.0.0"), // TODO Update from package.json
+                VERSION: JSON.stringify(pkg.version + "r"), // TODO Update from package.json
             }),
         ],
     };
