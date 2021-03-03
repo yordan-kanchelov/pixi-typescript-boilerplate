@@ -62,7 +62,5 @@ module.exports = (env: { mode: "development" | "production" }) => {
 
     const mergedConfig = merge(config, envConfig);
 
-    console.log(mergedConfig);
-
     return mergedConfig;
 };
