@@ -15,6 +15,7 @@ module.exports = (env: { mode: "development" | "production" }) => {
 
         devServer: {
             host: "0.0.0.0",
+            open: true,
             openPage: "http://localhost:8080/",
         },
 
