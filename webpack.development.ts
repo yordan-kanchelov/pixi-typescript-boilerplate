@@ -46,7 +46,7 @@ module.exports = (env: { mode: "development" | "production" }) => {
             }),
 
             new webpack.DefinePlugin({
-                VERSION: JSON.stringify(pkg.version + "r"), // TODO Update from package.json
+                VERSION: JSON.stringify(pkg.version + "dev"),
             }),
         ],
     };

@@ -46,7 +46,6 @@ module.exports = (env: { mode: "development" | "production" }) => {
         output: {
             path: path.resolve(__dirname, "dist"),
             filename: "game.[contenthash].js",
-            chunkFilename: "game-libraries.[contenthash].js",
         },
 
         plugins: [
@@ -64,7 +63,7 @@ module.exports = (env: { mode: "development" | "production" }) => {
             }),
 
             new webpack.DefinePlugin({
-                VERSION: JSON.stringify(pkg.version + "r"), // TODO Update from package.json
+                VERSION: JSON.stringify(pkg.version + "r"),
             }),
 
             new webpack.ProgressPlugin(),
