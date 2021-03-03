@@ -1,9 +1,12 @@
 import * as path from "path";
 import * as webpack from "webpack";
 
+import fs from "fs";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
-import TerserPlugin from "terser-webpack-plugin";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const pkg: any = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json"), "utf-8"));
 
 module.exports = (env: { mode: "development" | "production" }) => {
     return {
@@ -42,13 +45,12 @@ module.exports = (env: { mode: "development" | "production" }) => {
 
         output: {
             path: path.resolve(__dirname, "dist"),
-            filename: "game.[hash].js",
-            chunkFilename: "game-library.[contenthash].js",
+            filename: "game.[contenthash].js",
         },
 
         plugins: [
             new MiniCssExtractPlugin({
-                filename: "[name].[hash].css",
+                filename: "[name].[contenthash].css",
             }),
 
             new OptimizeCssAssetsPlugin({
@@ -61,25 +63,10 @@ module.exports = (env: { mode: "development" | "production" }) => {
             }),
 
             new webpack.DefinePlugin({
-                PRODUCTION: JSON.stringify(true),
-                VERSION: JSON.stringify("3.0.0"), // TODO Update from package.json
+                VERSION: JSON.stringify(pkg.version + "r"),
             }),
 
             new webpack.ProgressPlugin(),
         ],
-
-        optimization: {
-            minimize: true,
-            minimizer: [
-                new TerserPlugin({
-                    terserOptions: {
-                        mangle: true,
-                        toplevel: true,
-                        keep_classnames: false,
-                        keep_fnames: true,
-                    },
-                }),
-            ],
-        },
     };
 };
