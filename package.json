@@ -47,7 +47,7 @@
         "copy-webpack-plugin": "^8.0.0",
         "css-loader": "^5.1.1",
         "del-cli": "^3.0.1",
-        "eslint": "^7.21.0",
+        "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
         "eslint-loader": "^4.0.2",
         "eslint-plugin-prettier": "^3.3.1",
