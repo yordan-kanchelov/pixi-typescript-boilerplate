@@ -37,8 +37,7 @@ module.exports = (env: { mode: "development" | "production" }) => {
 
         output: {
             path: path.resolve(__dirname, "dist"),
-            filename: "[name].js",
-            chunkFilename: "[id].js",
+            filename: "[name].js"
         },
 
         plugins: [
