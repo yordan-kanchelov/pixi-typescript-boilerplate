@@ -20,7 +20,7 @@
     "license": "MIT",
     "dependencies": {
         "core-js": "^3.9.1",
-        "pixi.js": "^6.0.0"
+        "pixi.js": "^6.0.1"
     },
     "devDependencies": {
         "@babel/core": "^7.13.8",
