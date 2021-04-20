@@ -1,17 +1,16 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-import * as path from "path";
+const path = require("path");
 
-import { merge } from "webpack-merge";
-import { Configuration } from "webpack";
+const merge = require("webpack-merge").merge;
 
 // plugins
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import CopyPlugin from "copy-webpack-plugin";
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
-module.exports = (env: "development" | "production") => {
-    const config: Configuration = {
+module.exports = (env) => {
+    const config = {
         entry: "./src/index.ts",
 
         resolve: {
@@ -56,7 +55,7 @@ module.exports = (env: "development" | "production") => {
             }),
         ],
     };
-    const envConfig = require(path.resolve(__dirname, `./webpack.${env}.ts`))(env);
+    const envConfig = require(path.resolve(__dirname, `./webpack.${env.mode}.js`))(env);
 
     const mergedConfig = merge(config, envConfig);
 

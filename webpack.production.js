@@ -1,14 +1,15 @@
-import * as path from "path";
-import * as webpack from "webpack";
+/* eslint-disable @typescript-eslint/no-var-requires */
+const webpack = require("webpack");
+const path = require("path");
 
-import fs from "fs";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
+const fs = require("fs");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const pkg: any = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json"), "utf-8"));
+const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json"), "utf-8"));
 
-module.exports = (env: { mode: "development" | "production" }) => {
+module.exports = (env) => {
     return {
         mode: env.mode,
 
