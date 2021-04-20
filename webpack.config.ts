@@ -10,9 +10,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CopyPlugin from "copy-webpack-plugin";
 
-module.exports = (env: { mode: "development" | "production" }) => {
-    const developmentMode = env.mode === "development";
-
+module.exports = (env: "development" | "production") => {
     const config: Configuration = {
         entry: "./src/index.ts",
 
@@ -58,7 +56,7 @@ module.exports = (env: { mode: "development" | "production" }) => {
             }),
         ],
     };
-    const envConfig = require(path.resolve(__dirname, `./webpack.${env.mode}.ts`))(env);
+    const envConfig = require(path.resolve(__dirname, `./webpack.${env}.ts`))(env);
 
     const mergedConfig = merge(config, envConfig);
 
