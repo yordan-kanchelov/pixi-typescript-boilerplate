@@ -17,7 +17,7 @@
 
 ### Click on the green button "Use this template" on top of the repo or <br> <br> Simply copy paste this and start coding
 
-`git clone --depth=1 --branch=master https://github.com/jkanchelov/pixi-typescript-boilerplate`
+`git clone --depth=1 --branch=master https://github.com/yordan-kanchelov/pixi-typescript-boilerplate`
 
 `rm -r -force ./pixi-typescript-boilerplate/.git`
 
