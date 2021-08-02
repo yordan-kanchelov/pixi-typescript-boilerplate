@@ -20,7 +20,7 @@
     "author": "jkanchelov",
     "license": "MIT",
     "dependencies": {
-        "core-js": "^3.12.1",
+        "core-js": "^3.16.0",
         "pixi.js": "^6.0.2"
     },
     "devDependencies": {
