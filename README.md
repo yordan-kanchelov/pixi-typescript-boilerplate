@@ -8,7 +8,7 @@
 
 -   🔰 - Beginner friendly.
 -   🚀 - Blazing fast bundle times ( by using [swc](https://github.com/swc-project/swc) for transpiling ) 
--   🛠 - typescript + swc
+-   🛠 - Typescript + swc
 -   ✈️ - Live reload.
 -   📝 - Consistent code style using Prettier and Eslint
 -   📝 - Unit test support with [Jest](https://jestjs.io/), generating code coverage.
