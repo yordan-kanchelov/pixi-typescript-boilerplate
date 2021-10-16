@@ -7,9 +7,9 @@
 ## Highlights
 
 -   🔰 - Beginner friendly.
--   🛠 - Typescript + Babel.
+-   🚀 - Blazing fast bundle times ( by using [swc](https://github.com/swc-project/swc) for transpiling ) 
+-   🛠 - Typescript + swc
 -   ✈️ - Live reload.
--   🚀 - Blazing fast bundle times
 -   📝 - Consistent code style using Prettier and Eslint
 -   📝 - Unit test support with [Jest](https://jestjs.io/), generating code coverage.
 
