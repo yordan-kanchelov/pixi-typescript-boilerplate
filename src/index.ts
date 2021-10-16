@@ -1,4 +1,5 @@
-import * as PIXI from "pixi.js";
+import { Application, Loader, Texture, AnimatedSprite } from "pixi.js";
+import { getSpine } from "./spine-example";
 import "./style.css";
 
 declare const VERSION: string;
@@ -8,7 +9,7 @@ const gameHeight = 600;
 
 console.log(`Welcome from pixi-typescript-boilerplate ${VERSION}`);
 
-const app = new PIXI.Application({
+const app = new Application({
     backgroundColor: 0xd3d3d3,
     width: gameWidth,
     height: gameHeight,
@@ -27,13 +28,18 @@ window.onload = async (): Promise<void> => {
     birdFromSprite.anchor.set(0.5, 0.5);
     birdFromSprite.position.set(gameWidth / 2, gameHeight / 2);
 
+    const spineExample = getSpine();
+
     stage.addChild(birdFromSprite);
+    stage.addChild(spineExample);
+    stage.interactive = true;
 };
 
 async function loadGameAssets(): Promise<void> {
     return new Promise((res, rej) => {
-        const loader = PIXI.Loader.shared;
+        const loader = Loader.shared;
         loader.add("rabbit", "./assets/simpleSpriteSheet.json");
+        loader.add("pixie", "./assets/spine-assets/pixie.json");
 
         loader.onComplete.once(() => {
             res();
@@ -59,11 +65,11 @@ function resizeCanvas(): void {
     window.addEventListener("resize", resize);
 }
 
-function getBird(): PIXI.AnimatedSprite {
-    const bird = new PIXI.AnimatedSprite([
-        PIXI.Texture.from("birdUp.png"),
-        PIXI.Texture.from("birdMiddle.png"),
-        PIXI.Texture.from("birdDown.png"),
+function getBird(): AnimatedSprite {
+    const bird = new AnimatedSprite([
+        Texture.from("birdUp.png"),
+        Texture.from("birdMiddle.png"),
+        Texture.from("birdDown.png"),
     ]);
 
     bird.loop = true;
