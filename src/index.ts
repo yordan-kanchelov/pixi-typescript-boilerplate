@@ -1,5 +1,6 @@
 import { Application, Loader, Texture, AnimatedSprite } from "pixi.js";
 import { getSpine } from "./spine-example";
+import { getLayersExample } from "./layers-example";
 import "./style.css";
 
 declare const VERSION: string;
@@ -29,9 +30,11 @@ window.onload = async (): Promise<void> => {
     birdFromSprite.position.set(gameWidth / 2, gameHeight / 2);
 
     const spineExample = getSpine();
+    const layersExample = getLayersExample();
 
-    stage.addChild(birdFromSprite);
-    stage.addChild(spineExample);
+    // stage.addChild(birdFromSprite);
+    // stage.addChild(spineExample);
+    stage.addChild(layersExample);
     stage.interactive = true;
 };
 
