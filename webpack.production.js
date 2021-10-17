@@ -69,10 +69,6 @@ module.exports = (env) => {
                 failOnWarning: true,
             }),
 
-            new TerserPlugin({
-                minify: TerserPlugin.swcMinify,
-            }),
-
             new webpack.ProgressPlugin(),
         ],
     };
