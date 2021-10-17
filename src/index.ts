@@ -16,26 +16,25 @@ const app = new Application({
     height: gameHeight,
 });
 
-const stage = app.stage;
-
 window.onload = async (): Promise<void> => {
     await loadGameAssets();
 
     document.body.appendChild(app.view);
 
+    getLayersExample(app);
+
     resizeCanvas();
 
     const birdFromSprite = getBird();
     birdFromSprite.anchor.set(0.5, 0.5);
-    birdFromSprite.position.set(gameWidth / 2, gameHeight / 2);
+    birdFromSprite.position.set(gameWidth / 2, 530);
 
     const spineExample = getSpine();
-    const layersExample = getLayersExample();
+    spineExample.position.y = 580;
 
-    // stage.addChild(birdFromSprite);
-    // stage.addChild(spineExample);
-    stage.addChild(layersExample);
-    stage.interactive = true;
+    app.stage.addChild(birdFromSprite);
+    app.stage.addChild(spineExample);
+    app.stage.interactive = true;
 };
 
 async function loadGameAssets(): Promise<void> {

@@ -25,7 +25,7 @@
     "author": "jkanchelov",
     "license": "MIT",
     "dependencies": {
-        "@pixi/layers": "^1.0.9",
+        "@pixi/layers": "^1.0.10",
         "core-js": "^3.18.3",
         "pixi-spine": "^3.0.13",
         "pixi.js": "^6.1.3",

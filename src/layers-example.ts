@@ -1,7 +1,15 @@
-import { Group, Stage, Layer } from "@pixi/layers";
-import { Container, filters, Graphics, Sprite, Texture } from "pixi.js";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-nocheck
+// PS currently too lazy to mgirate everything here to ts compliant code;
+// because of that adding ts-check for now
 
-export function getLayersExample(): Stage {
+import { Group, Stage, Layer } from "@pixi/layers";
+import { Application, Container, filters, Graphics, Sprite, Texture } from "pixi.js";
+
+export function getLayersExample(app: Application): Stage {
+    const stage = new Stage();
+    app.stage = stage;
+
     const greenGroup = new Group(0, true);
 
     greenGroup.on("sort", (sprite) => {
@@ -22,7 +30,6 @@ export function getLayersExample(): Stage {
     const shadowGroup = new Group(-1, false);
 
     // specify display list component
-    const stage = new Stage();
     // PixiJS v5 sorting - works on zIndex - and layer gets its zIndex from a group!
     stage.sortableChildren = true;
     // sorry, group cant exist without layer yet :(;
@@ -81,14 +88,14 @@ export function getLayersExample(): Stage {
 
     function subscribe(obj) {
         obj.interactive = true;
-        // obj.on("mousedown", onDragStart)
-        //     .on("touchstart", onDragStart)
-        //     .on("mouseup", onDragEnd)
-        //     .on("mouseupoutside", onDragEnd)
-        //     .on("touchend", onDragEnd)
-        //     .on("touchendoutside", onDragEnd)
-        //     .on("mousemove", onDragMove)
-        //     .on("touchmove", onDragMove);
+        obj.on("mousedown", onDragStart)
+            .on("touchstart", onDragStart)
+            .on("mouseup", onDragEnd)
+            .on("mouseupoutside", onDragEnd)
+            .on("touchend", onDragEnd)
+            .on("touchendoutside", onDragEnd)
+            .on("mousemove", onDragMove)
+            .on("touchmove", onDragMove);
     }
 
     function addShadow(obj) {
@@ -104,37 +111,37 @@ export function getLayersExample(): Stage {
         obj.addChild(gr);
     }
 
-    // function onDragStart(event) {
-    //     if (!this.dragging) {
-    //         this.data = event.data;
-    //         this.oldGroup = this.parentGroup;
-    //         this.parentGroup = dragGroup;
-    //         this.dragging = true;
+    function onDragStart(event) {
+        if (!this.dragging) {
+            this.data = event.data;
+            this.oldGroup = this.parentGroup;
+            this.parentGroup = dragGroup;
+            this.dragging = true;
 
-    //         this.scale.x *= 1.1;
-    //         this.scale.y *= 1.1;
-    //         this.dragPoint = event.data.getLocalPosition(this.parent);
-    //         this.dragPoint.x -= this.x;
-    //         this.dragPoint.y -= this.y;
-    //     }
-    // }
+            this.scale.x *= 1.1;
+            this.scale.y *= 1.1;
+            this.dragPoint = event.data.getLocalPosition(this.parent);
+            this.dragPoint.x -= this.x;
+            this.dragPoint.y -= this.y;
+        }
+    }
 
-    // function onDragEnd() {
-    //     if (this.dragging) {
-    //         this.dragging = false;
-    //         this.parentGroup = this.oldGroup;
-    //         this.scale.x /= 1.1;
-    //         this.scale.y /= 1.1;
-    //         // set the interaction data to null
-    //         this.data = null;
-    //     }
-    // }
+    function onDragEnd() {
+        if (this.dragging) {
+            this.dragging = false;
+            this.parentGroup = this.oldGroup;
+            this.scale.x /= 1.1;
+            this.scale.y /= 1.1;
+            // set the interaction data to null
+            this.data = null;
+        }
+    }
 
-    // function onDragMove() {
-    //     if (this.dragging) {
-    //         const newPosition = this.data.getLocalPosition(this.parent);
-    //         this.x = newPosition.x - this.dragPoint.x;
-    //         this.y = newPosition.y - this.dragPoint.y;
-    //     }
-    // }
+    function onDragMove() {
+        if (this.dragging) {
+            const newPosition = this.data.getLocalPosition(this.parent);
+            this.x = newPosition.x - this.dragPoint.x;
+            this.y = newPosition.y - this.dragPoint.y;
+        }
+    }
 }
