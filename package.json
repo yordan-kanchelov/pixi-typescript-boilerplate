@@ -28,7 +28,7 @@
         "@pixi/layers": "^1.0.10",
         "core-js": "^3.18.3",
         "pixi-spine": "^3.0.13",
-        "pixi.js": "^6.1.3",
+        "pixi.js": "^6.2.0",
         "regenerator-runtime": "^0.13.9"
     },
     "devDependencies": {
