@@ -32,7 +32,7 @@
         "regenerator-runtime": "^0.13.9"
     },
     "devDependencies": {
-        "@swc/core": "^1.2.135",
+        "@swc/core": "^1.2.196",
         "@types/jest": "^27.4.0",
         "@types/node": "^17.0.13",
         "@types/offscreencanvas": "^2019.6.4",
