@@ -15,6 +15,10 @@ module.exports = (env) => {
 
         resolve: {
             extensions: [".ts", ".tsx", ".js", ".json"],
+            // alias: {
+            //     // Force CommonJS for PixiJS since some modules are not ES6 compatible
+            //     "pixi.js": path.resolve(__dirname, "node_modules/pixi.js/dist/cjs/pixi.min.js"),
+            // },
         },
 
         module: {
@@ -44,11 +48,16 @@ module.exports = (env) => {
                         from: "assets/**",
 
                         // if there are nested subdirectories , keep the hierarchy
-                        transformPath(targetPath, absolutePath) {
+                        to({ context, absoluteFilename }) {
                             const assetsPath = path.resolve(__dirname, "assets");
-                            const endpPath = absolutePath.slice(assetsPath.length);
 
-                            return Promise.resolve(`assets/${endpPath}`);
+                            if (!absoluteFilename) {
+                                throw Error();
+                            }
+
+                            const endPath = absoluteFilename.slice(assetsPath.length);
+
+                            return Promise.resolve(`assets/${endPath}`);
                         },
                     },
                 ],
