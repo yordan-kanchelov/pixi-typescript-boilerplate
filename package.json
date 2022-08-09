@@ -34,7 +34,7 @@
     "devDependencies": {
         "@swc/core": "^1.2.222",
         "@types/jest": "^28.1.6",
-        "@types/node": "^18.6.3",
+        "@types/node": "^18.6.5",
         "@types/offscreencanvas": "^2019.7.0",
         "@typescript-eslint/eslint-plugin": "^5.32.0",
         "@typescript-eslint/parser": "^5.32.0",
