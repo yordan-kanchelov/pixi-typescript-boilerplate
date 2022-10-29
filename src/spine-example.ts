@@ -1,9 +1,12 @@
 import { Loader } from "pixi.js";
 import { Spine } from "pixi-spine";
-import { SkeletonData } from "@pixi-spine/runtime-4.0";
 
 export function getSpine(): Spine {
-    const spineExample = new Spine(Loader.shared.resources.pixie.spineData as SkeletonData);
+    if (!Loader.shared.resources.pixie.spineData) {
+        throw new Error("Pixie spine is not loaded");
+    }
+
+    const spineExample = new Spine(Loader.shared.resources.pixie.spineData);
     spineExample.scale.set(0.3, 0.3);
     spineExample.y = spineExample.height;
     spineExample.x = spineExample.width / 2;

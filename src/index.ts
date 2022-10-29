@@ -1,6 +1,5 @@
 import { Application, Loader, Texture, AnimatedSprite } from "pixi.js";
 import { getSpine } from "./spine-example";
-import { getLayersExample } from "./layers-example";
 import "./style.css";
 
 declare const VERSION: string;
@@ -20,8 +19,6 @@ window.onload = async (): Promise<void> => {
     await loadGameAssets();
 
     document.body.appendChild(app.view);
-
-    getLayersExample(app);
 
     resizeCanvas();
 
