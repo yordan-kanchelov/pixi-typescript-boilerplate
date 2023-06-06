@@ -19,7 +19,7 @@
 
 `git clone --depth=1 --branch=master https://github.com/yordan-kanchelov/pixi-typescript-boilerplate`
 
-`rm -r -force ./pixi-typescript-boilerplate/.git`
+`rm -rf ./pixi-typescript-boilerplate/.git`
 
 ## Commands:
 
