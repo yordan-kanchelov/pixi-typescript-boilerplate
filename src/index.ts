@@ -1,6 +1,7 @@
-import { Application, Loader, Texture, AnimatedSprite } from "pixi.js";
-import { getSpine } from "./spine-example";
+import "pixi-spine";
 import "./style.css";
+import { Application, Texture, AnimatedSprite, Assets } from "pixi.js";
+import { getSpine } from "./spine-example";
 
 declare const VERSION: string;
 
@@ -9,7 +10,7 @@ const gameHeight = 600;
 
 console.log(`Welcome from pixi-typescript-boilerplate ${VERSION}`);
 
-const app = new Application({
+const app = new Application<HTMLCanvasElement>({
     backgroundColor: 0xd3d3d3,
     width: gameWidth,
     height: gameHeight,
@@ -24,10 +25,10 @@ window.onload = async (): Promise<void> => {
 
     const birdFromSprite = getBird();
     birdFromSprite.anchor.set(0.5, 0.5);
-    birdFromSprite.position.set(gameWidth / 2, 530);
+    birdFromSprite.position.set(gameWidth / 2, gameHeight / 2);
 
-    const spineExample = getSpine();
-    spineExample.position.y = 580;
+    const spineExample = await getSpine();
+    console.log(spineExample);
 
     app.stage.addChild(birdFromSprite);
     app.stage.addChild(spineExample);
@@ -35,21 +36,31 @@ window.onload = async (): Promise<void> => {
 };
 
 async function loadGameAssets(): Promise<void> {
-    return new Promise((res, rej) => {
-        const loader = Loader.shared;
-        loader.add("rabbit", "./assets/simpleSpriteSheet.json");
-        loader.add("pixie", "./assets/spine-assets/pixie.json");
+    const manifest = {
+        bundles: [
+            {
+                name: "bird",
+                assets: [
+                    {
+                        name: "bird",
+                        srcs: "./assets/simpleSpriteSheet.json",
+                    },
+                ],
+            },
+            {
+                name: "pixie",
+                assets: [
+                    {
+                        name: "pixie",
+                        srcs: "./assets/spine-assets/pixie.json",
+                    },
+                ],
+            },
+        ],
+    };
 
-        loader.onComplete.once(() => {
-            res();
-        });
-
-        loader.onError.once(() => {
-            rej();
-        });
-
-        loader.load();
-    });
+    await Assets.init({ manifest });
+    await Assets.loadBundle(["bird", "pixie"]);
 }
 
 function resizeCanvas(): void {
