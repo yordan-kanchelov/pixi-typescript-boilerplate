@@ -19,9 +19,9 @@ jobs:
             - name: npm install
               run: |
                   npm ci
-            - name: code style check
+            - name: lint
               run: |
-                  npm run code-style-check
+                  npm run lint
             - name: build, and test
               run: |
                   npm run build
