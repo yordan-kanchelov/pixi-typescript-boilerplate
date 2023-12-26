@@ -8,7 +8,13 @@ declare const VERSION: string;
 const gameWidth = 800;
 const gameHeight = 600;
 
-console.log(`Welcome from pixi-typescript-boilerplate ${VERSION}`);
+console.log(
+    `%cPixiJS V7\nTypescript Boilerplate%c ${VERSION} %chttp://www.pixijs.com %c❤️`,
+    "background: #ff66a1; color: #FFFFFF; padding: 2px 4px; border-radius: 2px; font-weight: bold;",
+    "color: #D81B60; font-weight: bold;",
+    "color: #C2185B; font-weight: bold; text-decoration: underline;",
+    "color: #ff66a1;",
+);
 
 const app = new Application<HTMLCanvasElement>({
     backgroundColor: 0xd3d3d3,
@@ -28,7 +34,6 @@ window.onload = async (): Promise<void> => {
     birdFromSprite.position.set(gameWidth / 2, gameHeight / 2);
 
     const spineExample = await getSpine();
-    console.log(spineExample);
 
     app.stage.addChild(birdFromSprite);
     app.stage.addChild(spineExample);

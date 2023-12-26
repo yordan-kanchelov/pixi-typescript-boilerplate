@@ -49,7 +49,7 @@ module.exports = () => {
             }),
 
             new webpack.DefinePlugin({
-                VERSION: JSON.stringify(pkg.version + "r"),
+                VERSION: JSON.stringify(pkg.version + "-r"),
             }),
 
             new ESLintPlugin({
