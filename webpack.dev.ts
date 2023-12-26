@@ -9,7 +9,7 @@ const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json"), "ut
 
 module.exports = () => {
     const devConfig = {
-        mode: "dev",
+        mode: "development",
 
         devtool: "inline-source-map",
 

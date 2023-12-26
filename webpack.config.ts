@@ -60,7 +60,9 @@ module.exports = (env: { mode: "development" | "production" }) => {
             }),
         ],
     };
-    const envConfig = require(path.resolve(__dirname, `./webpack.${env.mode}.ts`))();
+    const isDev = env.mode === "development";
+    const webpackConfigFile = isDev ? "webpack.dev.ts" : "webpack.prod.ts";
+    const envConfig = require(path.resolve(__dirname, webpackConfigFile))();
 
     const mergedConfig = merge(config, envConfig);
 
