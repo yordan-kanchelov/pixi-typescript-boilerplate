@@ -8,7 +8,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [16.x]
+                node-version: [20.x]
 
         steps:
             - uses: actions/checkout@v1
@@ -19,9 +19,9 @@ jobs:
             - name: npm install
               run: |
                   npm ci
-            - name: code style check
+            - name: lint
               run: |
-                  npm run code-style-check
+                  npm run lint
             - name: build, and test
               run: |
                   npm run build

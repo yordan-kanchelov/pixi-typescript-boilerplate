@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable */
 
 const path = require("path");
 
@@ -9,16 +9,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
-module.exports = (env) => {
+module.exports = (env: { mode: "development" | "production" }) => {
     const config = {
         entry: "./src/index.ts",
 
         resolve: {
             extensions: [".ts", ".tsx", ".js", ".json"],
-            // alias: {
-            //     // Force CommonJS for PixiJS since some modules are not ES6 compatible
-            //     "pixi.js": path.resolve(__dirname, "node_modules/pixi.js/dist/cjs/pixi.min.js"),
-            // },
         },
 
         module: {
@@ -48,7 +44,7 @@ module.exports = (env) => {
                         from: "assets/**",
 
                         // if there are nested subdirectories , keep the hierarchy
-                        to({ context, absoluteFilename }) {
+                        to({ absoluteFilename }: { absoluteFilename: string }) {
                             const assetsPath = path.resolve(__dirname, "assets");
 
                             if (!absoluteFilename) {
@@ -64,7 +60,9 @@ module.exports = (env) => {
             }),
         ],
     };
-    const envConfig = require(path.resolve(__dirname, `./webpack.${env.mode}.js`))(env);
+    const isDev = env.mode === "development";
+    const webpackConfigFile = isDev ? "webpack.dev.ts" : "webpack.prod.ts";
+    const envConfig = require(path.resolve(__dirname, webpackConfigFile))();
 
     const mergedConfig = merge(config, envConfig);
 
