@@ -19,7 +19,7 @@
         "prebuild": "npm run clean",
         "build": "npm run webpack -- --env mode=production",
         "start": "http-server dist -o",
-        "lint": "eslint . --ext .ts,.tsx && npx prettier --check **/*.{ts,js,json,md}",
+        "lint": "eslint . --ext .ts,.tsx && npx prettier --check **/*.{ts,js,json}",
         "prepare": "husky install"
     },
     "author": "jkanchelov",
