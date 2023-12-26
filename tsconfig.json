@@ -1,16 +1,16 @@
 {
     "compilerOptions": {
-        "target": "ES2020",
-        "module": "ES2020" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
+        "target": "ES2022",
+        "module": "CommonJS",
         "strict": true,
+        "sourceMap": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
-        "moduleResolution": "node",
+        "forceConsistentCasingInFileNames": true,
         "paths": {
             "mini-signals": ["./node_modules/resource-loader/typings/mini-signals.d.ts"]
         },
-        "skipLibCheck": false,
-        "lib": ["DOM", "ES2020"]
+        "lib": ["ES2022", "DOM"]
     },
-    "include": ["./src/index.ts"]
+    "include": ["./src/index.ts", "webpack.config.ts", "webpack.dev.ts", "webpack.webpack.prod.ts"]
 }
