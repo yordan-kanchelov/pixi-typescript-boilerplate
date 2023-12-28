@@ -10,7 +10,13 @@
         "paths": {
             "mini-signals": ["./node_modules/resource-loader/typings/mini-signals.d.ts"]
         },
-        "lib": ["ES2022", "DOM"],
+        "lib": ["ES2022", "DOM"]
     },
-    "include": ["./src/index.ts", "./src/typings.d.ts", "webpack.config.ts", "webpack.dev.ts", "webpack.webpack.prod.ts"]
+    "include": [
+        "./src/index.ts",
+        "./src/typings.d.ts",
+        "webpack.config.ts",
+        "webpack.dev.ts",
+        "webpack.webpack.prod.ts"
+    ]
 }
