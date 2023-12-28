@@ -1,14 +1,15 @@
-name: Linux build
+name: Lint And Build
 
 on: [push, pull_request]
 
 jobs:
     build:
-        runs-on: ubuntu-latest
-
         strategy:
             matrix:
+                os: [windows-latest, macos-latest, ubuntu-latest]
                 node-version: [20.x]
+
+        runs-on: ${{ matrix.os }}
 
         steps:
             - uses: actions/checkout@v1
@@ -22,7 +23,7 @@ jobs:
             - name: lint
               run: |
                   npm run lint
-            - name: build, and test
+            - name: build and test
               run: |
                   npm run build
                   npm test --if-present
