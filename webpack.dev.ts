@@ -52,7 +52,7 @@ module.exports = () => {
             }),
 
             new webpack.DefinePlugin({
-                VERSION: JSON.stringify(pkg.version + "-dev"),
+                VERSION: JSON.stringify(pkg.version + "-d"),
             }),
         ],
     };

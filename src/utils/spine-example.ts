@@ -7,7 +7,7 @@ export async function getSpine(): Promise<Spine> {
 
     const spineExample = new Spine(spineResource.spineData);
     spineExample.scale.set(0.3, 0.3);
-    spineExample.y = spineExample.height;
+    spineExample.y = spineExample.height * 1.1;
     spineExample.x = spineExample.width / 2;
     spineExample.stateData.setMix("running", "jump", 0.2);
     spineExample.stateData.setMix("jump", "running", 0.4);

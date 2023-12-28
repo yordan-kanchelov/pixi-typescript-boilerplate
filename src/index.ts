@@ -1,12 +1,12 @@
 import "pixi-spine";
 import "./style.css";
-import { Application, Texture, AnimatedSprite, Assets } from "pixi.js";
-import { getSpine } from "./spine-example";
+import { Application, Assets } from "pixi.js";
+import { getSpine } from "./utils/spine-example";
+import { createBird } from "./utils/create-bird";
+import { attachConsole } from "./utils/attach-console";
 
-declare const VERSION: string;
-
-const gameWidth = 800;
-const gameHeight = 600;
+const gameWidth = 1280;
+const gameHeight = 720;
 
 console.log(
     `%cPixiJS V7\nTypescript Boilerplate%c ${VERSION} %chttp://www.pixijs.com %c❤️`,
@@ -29,15 +29,20 @@ window.onload = async (): Promise<void> => {
 
     resizeCanvas();
 
-    const birdFromSprite = getBird();
+    const birdFromSprite = createBird();
     birdFromSprite.anchor.set(0.5, 0.5);
-    birdFromSprite.position.set(gameWidth / 2, gameHeight / 2);
+    birdFromSprite.position.set(gameWidth / 2, gameHeight / 4);
 
     const spineExample = await getSpine();
 
     app.stage.addChild(birdFromSprite);
     app.stage.addChild(spineExample);
     app.stage.interactive = true;
+
+    if (VERSION.includes("d")) {
+        // if development version
+        attachConsole(app.stage, gameWidth, gameHeight);
+    }
 };
 
 async function loadGameAssets(): Promise<void> {
@@ -78,19 +83,4 @@ function resizeCanvas(): void {
     resize();
 
     window.addEventListener("resize", resize);
-}
-
-function getBird(): AnimatedSprite {
-    const bird = new AnimatedSprite([
-        Texture.from("birdUp.png"),
-        Texture.from("birdMiddle.png"),
-        Texture.from("birdDown.png"),
-    ]);
-
-    bird.loop = true;
-    bird.animationSpeed = 0.1;
-    bird.play();
-    bird.scale.set(3);
-
-    return bird;
 }
