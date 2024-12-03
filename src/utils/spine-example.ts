@@ -27,11 +27,9 @@ export async function getSpine(): Promise<Spine> {
 
     pixie.state.data.defaultMix = 0.2;
 
-    // Center the spine object on screen.
-    // spineboy.x = window.innerWidth / 2;
-    // spineboy.y = window.innerHeigh   t / 2 + spineboy.getBounds().height / 2;
+    pixie.x = window.innerWidth / 2;
+    pixie.y = window.innerHeight / 2 + pixie.getBounds().height / 2;
 
-    // Set animation "cape-follow-example" on track 0, looped.
     pixie.state.setAnimation(0, "running", true);
 
     console.log(pixie.width)
