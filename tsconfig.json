@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "ES2022",
-        "module": "CommonJS",
+        "module": "ES2015",
+        "moduleResolution": "bundler",
         "strict": true,
         "sourceMap": true,
         "esModuleInterop": true,
@@ -15,8 +15,5 @@
     "include": [
         "./src/index.ts",
         "./src/typings.d.ts",
-        "webpack.config.ts",
-        "webpack.dev.ts",
-        "webpack.webpack.prod.ts"
     ]
 }

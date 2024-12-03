@@ -1,4 +1,5 @@
 import { Assets } from "pixi.js";
+import "@esotericsoftware/spine-pixi-v7";
 import { Spine } from "@esotericsoftware/spine-pixi-v7";
 
 export async function getSpine(): Promise<Spine> {

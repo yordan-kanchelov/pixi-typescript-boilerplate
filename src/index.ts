@@ -1,3 +1,4 @@
+import "@esotericsoftware/spine-pixi-v7";
 import "./style.css";
 import { Application, Assets } from "pixi.js";
 import { getSpine } from "./utils/spine-example";
