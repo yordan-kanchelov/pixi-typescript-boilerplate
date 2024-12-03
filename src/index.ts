@@ -44,11 +44,38 @@ console.log(
                     ],
                 },
                 {
-                    name: "pixie",
+                    name: "spineboyData",
                     assets: [
                         {
-                            alias: "pixie",
+                            alias: "spineboyData",
+                            src: "./assets/spine-assets/spineboy-pro.skel",
+                        },
+                    ],
+                },
+                {
+                    name: "spineboyAtlas",
+                    assets: [
+                        {
+                            alias: "spineboyAtlas",
+                            src: "./assets/spine-assets/spineboy-pma.atlas",
+                        },
+                    ],
+                },
+                {
+                    name: "pixieData",
+                    assets: [
+                        {
+                            alias: "pixieData",
                             src: "./assets/spine-assets/pixie.json",
+                        },
+                    ],
+                },
+                {
+                    name: "pixieAtlas",
+                    assets: [
+                        {
+                            alias: "pixieAtlas",
+                            src: "./assets/spine-assets/pixie.atlas",
                         },
                     ],
                 },
@@ -56,7 +83,7 @@ console.log(
         } satisfies AssetsManifest;
 
         await Assets.init({ manifest });
-        await Assets.loadBundle(["bird", "pixie"]);
+        await Assets.loadBundle(["bird", "spineboyData", "spineboyAtlas", "pixieData", "pixieAtlas"]);
 
         document.body.appendChild(app.canvas);
 
