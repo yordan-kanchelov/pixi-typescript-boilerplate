@@ -9,12 +9,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
-module.exports = (env: { mode: "development" | "production" }) => {
+module.exports = (env) => {
     const config = {
         entry: "./src/index.ts",
 
         resolve: {
-            extensions: [".ts", ".tsx", ".js", ".json"],
+            extensions: [".ts", ".tsx", ".js", ".json", "js", "jsx"],
         },
 
         module: {
@@ -44,7 +44,7 @@ module.exports = (env: { mode: "development" | "production" }) => {
                         from: "assets/**",
 
                         // if there are nested subdirectories , keep the hierarchy
-                        to({ absoluteFilename }: { absoluteFilename: string }) {
+                        to({ absoluteFilename }) {
                             const assetsPath = path.resolve(__dirname, "assets");
 
                             if (!absoluteFilename) {
@@ -61,7 +61,7 @@ module.exports = (env: { mode: "development" | "production" }) => {
         ],
     };
     const isDev = env.mode === "development";
-    const webpackConfigFile = isDev ? "webpack.dev.ts" : "webpack.prod.ts";
+    const webpackConfigFile = isDev ? "webpack.dev.cjs" : "webpack.prod.cjs";
     const envConfig = require(path.resolve(__dirname, webpackConfigFile))();
 
     const mergedConfig = merge(config, envConfig);
