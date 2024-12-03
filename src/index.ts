@@ -12,11 +12,16 @@ console.log(
     "background: #ff66a1; color: #FFFFFF; padding: 2px 4px; border-radius: 2px; font-weight: bold;",
     "color: #D81B60; font-weight: bold;",
     "color: #C2185B; font-weight: bold; text-decoration: underline;",
-    "color: #ff66a1;",
+    //     "color: #ff66a1;",
 );
 
 (async () => {
     const app = new Application();
+
+    //await window load
+    await new Promise((resolve) => {
+        window.addEventListener("load", resolve);
+    })
 
     await app.init({
         backgroundColor: 0xd3d3d3,
@@ -65,12 +70,6 @@ console.log(
 
         app.stage.addChild(birdFromSprite);
         app.stage.addChild(spineExample);
-        // app.stage.interactive = true;
-
-        // if (VERSION.includes("d")) {
-        //     // if development version
-        //     attachConsole(app.stage, gameWidth, gameHeight);
-        // }
     }
 
 
