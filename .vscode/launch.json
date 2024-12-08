@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
+            "type": "edge",
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://0.0.0.0:8080",
