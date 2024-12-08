@@ -3,7 +3,6 @@ import tseslint from "typescript-eslint";
 import eslintPluginImport from "eslint-plugin-import";
 import prettierPlugin from "eslint-plugin-prettier";
 import htmlPlugin from "eslint-plugin-html";
-import nxPlugin from "@nx/eslint-plugin";
 import playwright from "eslint-plugin-playwright";
 import promise from "eslint-plugin-promise";
 
@@ -155,12 +154,11 @@ export default tseslint.config(
       prettier: prettierPlugin,
       import: eslintPluginImport,
       html: htmlPlugin,
-      "@nx": nxPlugin,
     },
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: "./tsconfig.base.json",
+        project: "./tsconfig.json",
         ecmaVersion: 2022,
         sourceType: "module",
         extraFileExtensions: [".html"],
@@ -185,14 +183,13 @@ export default tseslint.config(
       prettier: prettierPlugin,
       import: eslintPluginImport,
       html: htmlPlugin,
-      "@nx": nxPlugin,
       playwright: playwright,
       promise: promise,
     },
-    languageOptions: {
+    laguageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: "./tsconfig.base.json",
+        project: "./tsconfig.json",
         ecmaVersion: 2022,
         sourceType: "module",
         extraFileExtensions: [".html"],
