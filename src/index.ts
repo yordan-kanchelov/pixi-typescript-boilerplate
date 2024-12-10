@@ -60,19 +60,17 @@ async function loadGameAssets(): Promise<void> {
                 ],
             },
             {
-                name: "pixie",
+                name: "spineBoy",
                 assets: [
-                    {
-                        name: "pixie",
-                        srcs: "./assets/spine-assets/pixie.json",
-                    },
+                    { alias: "spineboyData", src: "./assets/spine-assets/spineboy-pro.skel" },
+                    { alias: "spineboyAtlas", src: "./assets/spine-assets/spineboy.atlas" }
                 ],
             },
         ],
     };
 
     await Assets.init({ manifest });
-    await Assets.loadBundle(["bird", "pixie"]);
+    await Assets.loadBundle(["bird", "spineBoy"]);
 }
 
 function resizeCanvas(): void {
