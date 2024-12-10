@@ -1,6 +1,7 @@
 import "@esotericsoftware/spine-pixi-v7";
 import "./style.css";
 import { Application, Assets } from "pixi.js";
+
 import { getSpine } from "./utils/spine-example";
 import { createBird } from "./utils/create-bird";
 import { attachConsole } from "./utils/attach-console";
@@ -30,6 +31,7 @@ window.onload = async (): Promise<void> => {
     resizeCanvas();
 
     const birdFromSprite = createBird();
+
     birdFromSprite.anchor.set(0.5, 0.5);
     birdFromSprite.position.set(gameWidth / 2, gameHeight / 4);
 
