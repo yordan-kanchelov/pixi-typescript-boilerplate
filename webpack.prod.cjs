@@ -1,11 +1,11 @@
-import * as webpack from "webpack";
-import * as path from "path";
-import fs from "fs";
+const webpack = require("webpack");
+const path = require("path");
+const fs = require("fs");
 
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import ESLintPlugin from "eslint-webpack-plugin";
-import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
-import TerserPlugin from "terser-webpack-plugin";
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, "package.json"), "utf-8"));
 
