@@ -30,7 +30,7 @@
     "devDependencies": {
         "@babel/core": "7.26.0",
         "@babel/preset-env": "7.26.0",
-        "@babel/runtime": "7.26.0",
+        "@babel/runtime": "7.26.10",
         "@types/node": "^22.10.1",
         "@types/offscreencanvas": "^2019.7.3",
         "@typescript-eslint/eslint-plugin": "^8.17.0",
