@@ -3,9 +3,6 @@ import tseslint from "typescript-eslint";
 import eslintPluginImport from "eslint-plugin-import";
 import prettierPlugin from "eslint-plugin-prettier";
 import htmlPlugin from "eslint-plugin-html";
-import nxPlugin from "@nx/eslint-plugin";
-import playwright from "eslint-plugin-playwright";
-import promise from "eslint-plugin-promise";
 
 // Define the common rules in a constant
 const commonRules = {
@@ -16,7 +13,6 @@ const commonRules = {
         { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"] },
         { blankLine: "always", prev: ["if"], next: "*" },
     ],
-    "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_", argsIgnorePattern: "^_" }],
     "sort-imports": [
         "error",
         {
@@ -27,56 +23,14 @@ const commonRules = {
             allowSeparatedGroups: true,
         },
     ],
-    "import/order": [
-        "error",
-        {
-            groups: ["builtin", "external", "internal", ["sibling", "parent"], "index", "unknown"],
-            pathGroups: [
-                { pattern: "pixi.js", group: "external" },
-                { pattern: "@live-casino/**", group: "external", position: "after" },
-                { pattern: "@egt-live-casino/**", group: "external", position: "after" },
-                { pattern: "@football-thrill/**", group: "internal", position: "before" },
-            ],
-            distinctGroup: true,
-            pathGroupsExcludedImportTypes: ["builtin"],
-            "newlines-between": "always",
-        },
-    ],
     "@typescript-eslint/explicit-member-accessibility": [
         "error",
-        { accessibility: "explicit", overrides: { constructors: "no-public", properties: "off" } },
-    ],
-    curly: ["error"],
-    "import/no-default-export": ["error"],
-    "grouped-accessor-pairs": ["error", "getBeforeSet"],
-    "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
-    "@typescript-eslint/no-unsafe-assignment": ["off"],
-    "@typescript-eslint/no-unsafe-return": ["off"],
-    "@typescript-eslint/unbound-method": ["off"],
-    "@typescript-eslint/no-unsafe-call": ["off"],
-    "import/no-unresolved": ["off"],
-    "@typescript-eslint/naming-convention": [
-        "error",
         {
-            selector: "memberLike",
-            modifiers: ["private"],
-            format: [],
-            leadingUnderscore: "forbid",
-            trailingUnderscore: "forbid",
-        },
-        {
-            selector: "memberLike",
-            modifiers: ["public"],
-            format: [],
-            leadingUnderscore: "forbid",
-            trailingUnderscore: "forbid",
-        },
-        {
-            selector: "memberLike",
-            modifiers: ["protected"],
-            format: [],
-            leadingUnderscore: "forbid",
-            trailingUnderscore: "forbid",
+            accessibility: "explicit",
+            overrides: {
+                constructors: "no-public",
+                properties: "off",
+            },
         },
     ],
 };
@@ -93,7 +47,6 @@ export default tseslint.config(
             "**/coverage/",
             "**/node_modules/",
             "**/build/",
-            "**/built/",
             "**/.cache/",
             "**/.local-browsers/",
             "**/.vscode/",
@@ -108,7 +61,7 @@ export default tseslint.config(
             "**/allure*",
             "**/.DS_Store",
             "**/.mono/",
-            "**/game-assets/**",
+            "**/assets/**",
             "blob-report",
             "**/eslint.config.*",
             "**/jest.config.*",
@@ -129,44 +82,30 @@ export default tseslint.config(
 
     // Base configuration for project files
     {
-        files: ["**/src/**/*.{js,mjs,cjs,jsx,ts,tsx}"],
-        plugins: { prettier: prettierPlugin, import: eslintPluginImport, html: htmlPlugin, "@nx": nxPlugin },
-        languageOptions: {
-            parser: tseslint.parser,
-            parserOptions: {
-                project: "./tsconfig.base.json",
-                ecmaVersion: 2022,
-                sourceType: "module",
-                extraFileExtensions: [".html"],
-            },
-            globals: { browser: true, node: true },
-        },
-        settings: { "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] } },
-        rules: commonRules,
-    },
-
-    // Configuration for test automation files
-    {
-        files: ["**/tests/**/*.{js,mjs,cjs,jsx,ts,tsx}"],
+        files: ["./src/**/*.{js,mjs,cjs,jsx,ts,tsx}"],
         plugins: {
             prettier: prettierPlugin,
             import: eslintPluginImport,
             html: htmlPlugin,
-            "@nx": nxPlugin,
-            playwright: playwright,
-            promise: promise,
         },
         languageOptions: {
             parser: tseslint.parser,
             parserOptions: {
-                project: "./tsconfig.base.json",
+                project: "./tsconfig.json",
                 ecmaVersion: 2022,
                 sourceType: "module",
                 extraFileExtensions: [".html"],
             },
-            globals: { browser: true, node: true },
+            globals: {
+                browser: true,
+                node: true,
+            },
         },
-        settings: { "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] } },
+        settings: {
+            "import/parsers": {
+                "@typescript-eslint/parser": [".ts", ".tsx"],
+            },
+        },
         rules: commonRules,
     },
 );

@@ -51,6 +51,7 @@ console.log(
         resizeCanvas();
 
         const birdFromSprite = createBird();
+
         birdFromSprite.anchor.set(0.5, 0.5);
         birdFromSprite.position.set(gameWidth / 2, gameHeight / 4);
 
