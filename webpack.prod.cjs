@@ -52,7 +52,6 @@ module.exports = () => {
             }),
 
             new ESLintPlugin({
-                extensions: ["js", "jsx", "ts", "tsx"],
                 emitError: true,
                 emitWarning: true,
                 failOnError: true,

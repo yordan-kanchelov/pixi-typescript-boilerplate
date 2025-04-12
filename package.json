@@ -14,14 +14,12 @@
     },
     "scripts": {
         "webpack": "webpack",
-        "webpack-dev-server": "webpack-dev-server",
-        "dev": "npm run webpack-dev-server -- --env mode=development",
-        "clean": "npx rimraf dist",
-        "prebuild": "npm run clean",
+        "start": "webpack-dev-server -- --env mode=development",
+        "prebuild": "npx rimraf dist",
         "build": "npm run webpack -- --env mode=production",
         "lint": "eslint ."
     },
-    "author": "jkanchelov",
+    "author": "yordan.kanchelov",
     "license": "MIT",
     "dependencies": {
         "@esotericsoftware/spine-pixi-v8": "^4.2.76",

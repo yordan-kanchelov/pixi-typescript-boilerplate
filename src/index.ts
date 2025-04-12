@@ -1,6 +1,7 @@
 import "./style.css";
-import { Application, AssetInitOptions, Assets, AssetsManifest } from "pixi.js";
-import "@esotericsoftware/spine-pixi-v8"
+import { Application, Assets, AssetsManifest } from "pixi.js";
+import "@esotericsoftware/spine-pixi-v8";
+
 import { getSpine } from "./utils/spine-example";
 import { createBird } from "./utils/create-bird";
 
@@ -21,63 +22,23 @@ console.log(
     //await window load
     await new Promise((resolve) => {
         window.addEventListener("load", resolve);
-    })
+    });
 
-    await app.init({
-        backgroundColor: 0xd3d3d3,
-        width: gameWidth,
-        height: gameHeight,
-    })
+    await app.init({ backgroundColor: 0xd3d3d3, width: gameWidth, height: gameHeight });
 
     await loadGameAssets();
 
     async function loadGameAssets(): Promise<void> {
         const manifest = {
             bundles: [
-                {
-                    name: "bird",
-                    assets: [
-                        {
-                            alias: "bird",
-                            src: "./assets/simpleSpriteSheet.json",
-                        },
-                    ],
-                },
+                { name: "bird", assets: [{ alias: "bird", src: "./assets/simpleSpriteSheet.json" }] },
                 {
                     name: "spineboyData",
-                    assets: [
-                        {
-                            alias: "spineboyData",
-                            src: "./assets/spine-assets/spineboy-pro.skel",
-                        },
-                    ],
+                    assets: [{ alias: "spineboyData", src: "./assets/spine-assets/spineboy-pro.skel" }],
                 },
                 {
                     name: "spineboyAtlas",
-                    assets: [
-                        {
-                            alias: "spineboyAtlas",
-                            src: "./assets/spine-assets/spineboy-pma.atlas",
-                        },
-                    ],
-                },
-                {
-                    name: "pixieData",
-                    assets: [
-                        {
-                            alias: "pixieData",
-                            src: "./assets/spine-assets/pixie.json",
-                        },
-                    ],
-                },
-                {
-                    name: "pixieAtlas",
-                    assets: [
-                        {
-                            alias: "pixieAtlas",
-                            src: "./assets/spine-assets/pixie.atlas",
-                        },
-                    ],
+                    assets: [{ alias: "spineboyAtlas", src: "./assets/spine-assets/spineboy-pma.atlas" }],
                 },
             ],
         } satisfies AssetsManifest;
@@ -99,7 +60,6 @@ console.log(
         app.stage.addChild(spineExample);
     }
 
-
     function resizeCanvas(): void {
         const resize = () => {
             app.renderer.resize(window.innerWidth, window.innerHeight);
@@ -111,4 +71,4 @@ console.log(
 
         window.addEventListener("resize", resize);
     }
-})()
+})();

@@ -4,7 +4,7 @@ A beginner-friendly template for building interactive graphics and games using P
 
 ![pixi.js logo](https://pixijs.download/pixijs-banner-no-version.png?v=1)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/14e7ef42-5c90-44c8-a7ec-0b6e20c59735/deploy-status)](https://pixi-typescript-boilerplate.netlify.com) ![Windows build](https://github.com/jkanchelov/pixi-typescript-boilerplate/workflows/Windows%20build/badge.svg?branch=master) ![Linux build](https://github.com/jkanchelov/pixi-typescript-boilerplate/workflows/Linux%20build/badge.svg) ![MacOs build](https://github.com/jkanchelov/pixi-typescript-boilerplate/workflows/MacOs%20build/badge.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/14e7ef42-5c90-44c8-a7ec-0b6e20c59735/deploy-status)](https://pixi-typescript-boilerplate.netlify.app)
 
 ## Recent update ( 25.12.2023 )
 
@@ -24,7 +24,7 @@ A beginner-friendly template for building interactive graphics and games using P
 
 ## Usage
 
-### Click on the green button "Use this template" on top of the repo or  
+### Click on the green button "Use this template" on top of the repo or
 
 Simply copy paste this and start coding
 
