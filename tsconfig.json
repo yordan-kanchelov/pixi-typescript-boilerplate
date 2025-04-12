@@ -1,19 +1,14 @@
 {
     "compilerOptions": {
-        "module": "ES2015",
+        "target": "ES2015",
         "moduleResolution": "bundler",
         "strict": true,
         "sourceMap": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
-        "paths": {
-            "mini-signals": ["./node_modules/resource-loader/typings/mini-signals.d.ts"]
-        },
+        "paths": { "mini-signals": ["./node_modules/resource-loader/typings/mini-signals.d.ts"] },
         "lib": ["ES2022", "DOM"]
     },
-    "include": [
-        "./src/index.ts",
-        "./src/typings.d.ts",
-    ]
+    "include": ["./src/index.ts", "./src/typings.d.ts"]
 }

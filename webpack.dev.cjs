@@ -23,7 +23,7 @@ module.exports = () => {
         module: {
             rules: [
                 {
-                    test: /\.tsx?$/,
+                    test: /\.(js|jsx|ts|tsx)$/, // include .js files
                     loader: "ts-loader",
                     exclude: /node_modules/,
                 },

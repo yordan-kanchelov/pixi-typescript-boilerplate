@@ -16,8 +16,7 @@ module.exports = () => {
         module: {
             rules: [
                 {
-                    // test: /\.(js|jsx|ts|tsx)$/,
-                    test: /\.(ts|tsx)$/, //temp fix for imports in config.js
+                    test: /\.(js|jsx|ts|tsx)$/, // include .js files
                     use: [
                         {
                             loader: "babel-loader",
@@ -26,7 +25,7 @@ module.exports = () => {
                     exclude: /node_modules/,
                 },
                 {
-                    test: /\.tsx?$/,
+                    test: /\.(js|jsx|ts|tsx)$/, // include .js files
                     use: "ts-loader",
                     exclude: /node_modules/,
                 },

@@ -6,6 +6,10 @@ A beginner-friendly template for building interactive graphics and games using P
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/14e7ef42-5c90-44c8-a7ec-0b6e20c59735/deploy-status)](https://pixi-typescript-boilerplate.netlify.app)
 
+## Recent update ( 12.04.2025 )
+
+- 🆕 Updated to Pixi v8: The latest version of Pixi.js brings significant performance improvements, WebGPU support, and enhanced rendering capabilities
+
 ## Recent update ( 25.12.2023 )
 
 - 🆕 Updated to Pixi v7: The latest version of Pixi.js brings enhanced features and performance improvements
