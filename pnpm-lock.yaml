@@ -103,7 +103,7 @@ importers:
         specifier: ^5.7.2
         version: 5.8.3
       typescript-eslint:
-        specifier: ^8.17.0
+        specifier: ^8.29.1
         version: 8.29.1(eslint@9.24.0)(typescript@5.8.3)
       webpack:
         specifier: ^5.97.1
