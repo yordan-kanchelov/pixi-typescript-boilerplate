@@ -1,5 +1,14 @@
 # Pixi.js TypeScript Boilerplate
 
+> [!WARNING]
+> This boilerplate is no longer actively maintained.
+>
+> If you are starting a new PixiJS project, please use the official [create-pixi](https://github.com/pixijs/create-pixi) tool instead.
+>
+> I originally created and maintained this boilerplate because, for a long time, there was no officially supported project starter from the PixiJS team. It helped fill that gap.
+>
+> Now that PixiJS has an official solution, it makes more sense to point people there rather than continue maintaining a separate community boilerplate.
+
 A beginner-friendly template for building interactive graphics and games using Pixi.js with TypeScript and Webpack. This boilerplate simplifies the setup process, allowing developers to quickly start creating engaging web experiences.
 
 ![pixi.js logo](https://pixijs.download/pixijs-banner-no-version.png?v=1)
